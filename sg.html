@@ -13,6 +13,7 @@
 
     a {
         color: white;
+        cursor: pointer;
     }
 
     div.amsdialog_header {
@@ -226,10 +227,19 @@
         min-width: 400px;
         max-width: 100%;
         background-color: white;
+     
         font-size: 14px;
         z-index: 100008;
         display: block;
         position: fixed;
+    }
+
+    .jl-box {
+        margin-left: -361.5px;
+        margin-top: -391.5px;
+    }
+    .zcx table a{
+        background-color: red;
     }
 </style>
 
@@ -402,24 +412,23 @@
 
 
         <!-- 获奖记录start -->
-        <div class="dialog jl-box" id="showMyGiftContent1" style="   display:none">
+        <div class="dialog jl-box" id="zjjlbox" style="   display:none">
             <div class="dia-con">
                 <h3 class="tc-tit2"></h3>
-                <div class="award">
-                    <table cellpadding="0" cellspacing="0">
+                <div class="award" style="overflow-y:auto ;height: 580px;">
+                    <table cellpadding="0" cellspacing="0" style="overflow:scroll;">
                         <thead>
                             <tr>
                                 <th style="width: 30%">时间</th>
                                 <th style="width: 30%">大区</th>
                                 <th style="width: 40%">道具</th>
                             </tr>
-                            <tr>
-                                <td>2023/2/12</td>
-                                <td>广东电信一区</td>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                            </tr>
+
                         </thead>
-                        <tbody id="milo-lotteryRecordContainer1">
+                        <tbody id="zjjltb">
+
+
+                            <td colspan="3" align="center">暂未获取更多礼包</td>
                         </tbody>
                     </table>
                     <div class="btn-switch milo-paginator" id="milo-paginator1">
@@ -430,27 +439,16 @@
             <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
         </div>
 
-        <script id="milo-lotteryRecordTpl1" type="text/html">
-{@ if(data.length == 0){@}
-<tr>
-    <td colspan="3" align="center">暂未获取更多礼包</td>
-</tr>
-{@}else{@}
-{@ for(var i = 0; i < data.length; i++) { @}
-<tr>
-    <td>{{ data[i].dtGetPackageTime }}</td>
-    <td>{{ data[i].sAreaName }}</td>
-    <td>{{ data[i].sPackageName }}</td>
-</tr>
-{@ } @}
-{@}@}
-</script>
+        <tr>
+
+        </tr>
+
         <!--获奖记录end-->
 
         <!--暂存箱 start-->
         <div class="dialog tc-box" id="showMyGiftContent2" style="   display:none">
             <div class="dia-con">
-                <div class="zcx">
+                <div class="zcx roll-tab" style="padding: 0;padding-top:170px;">
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                             <tr>
@@ -458,53 +456,13 @@
                                 <th style="width: 30%;">领取道具</th>
                                 <th style="width: 30%;">分解为钥匙</th>
                             </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
-                            <tr>
-                                <td>QBZ03-冠军之薇皮肤</td>
-                                <td> <a href="">[发送仓库]</a> </td>
-                                <td> <a href="">[分解]</a></td>
-                            </tr>
                         </thead>
-                        <tbody id="milo-lotteryRecordContainer2"></tbody>
+                        <tbody id="zcxtb">
+
+
+
+
+                        </tbody>
                     </table>
                     <div class="btn-switch milo-paginator" id="milo-paginator2">
                     </div>
@@ -868,7 +826,7 @@
                             欢迎您，22000092， 广东电信一区 勇敢的斯沃特<a href="javascript:void(0)"></a>
 
                             <a href="javascript:void(0)">[更改绑定]</a>
-                            <a href="javascript:void(0)">[礼包记录]</a>
+                            <a href="javascript:void(0)" onclick="Showwd('#zjjlbox')">[礼包记录]</a>
                             <a href="javascript:void(0)">[代金券记录]</a>
                             <a href="javascript:void(0)">[注销]</a>
                         </div>
@@ -1302,11 +1260,11 @@
             var keynum = 0;
             //定义钥匙数量
             const Pgailv = [
-                ['QBZ03-冠军之薇皮肤', 0.15, 15],
-                ['柯尔特-冠军之特', 0.20, 12],
-                ['火麒麟-冠军之心皮肤', 0.30, 6],
-                ['毁灭-冠军之怒皮肤', 0.30, 6],
-                ['雷神-冠军之魄皮肤', 0.30, 6],
+                ['QBZ03-冠军之薇皮肤', 10, 15],
+                ['柯尔特-冠军之特', 10, 12],
+                ['火麒麟-冠军之心皮肤', 10, 6],
+                ['毁灭-冠军之怒皮肤', 10, 6],
+                ['雷神-冠军之魄皮肤', 10, 6],
                 ['修罗-冠军之魂皮肤', 0.60, 3],
                 ['黄金猫猫手套-白鲨', 0.15, 8],
                 ['擎天-惨叫迹', 0.40, 8],
@@ -1325,7 +1283,10 @@
             var gailvnum = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0],
             [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0][0, 0],];
             //定义（初始化）概率范围数组
-
+            var zjjlt = [];
+            //定义中奖信息数组
+            var zcxxz = [];
+            //定义暂存箱数组
             SetGailv();
             var empsz = [0, 0];
             //定义空概率范围数组
@@ -1362,12 +1323,12 @@
                 else {
                     var sjs = Math.ceil(Math.random() * 10000);
                     //生成随机范围` 
-                    for(j = 0; j < gailvArr.length; j++) {
-                        var zxs=gailvnum[j][0]
-                        var zds=gailvnum[j][1]
-                        if(sjs>=zxs&&sjs<=zds)
-                        {
+                    for (j = 0; j < gailvArr.length; j++) {
+                        var zxs = gailvnum[j][0]
+                        var zds = gailvnum[j][1]
+                        if (sjs >= zxs && sjs <= zds) {
                             $("#dczjxx").text(gailvArr[j][0]);
+                            SetjlZcx(j);
                         }
 
                     }
@@ -1387,26 +1348,25 @@
                     Showwd("#xttc")
                 }
                 else {
-for (let index = 0; index < 10; index++) {
-    var sjs = Math.ceil(Math.random() * 10000);
-                    //生成随机范围` 
-                    for(var j = 0; j < gailvArr.length; j++) {
-                        var zxs=gailvnum[j][0]
-                        var zds=gailvnum[j][1]
-                        if(sjs>=zxs&&sjs<=zds)
-                        {
-                           
-                            $("#jlname"+index).text(gailvArr[j][0]);
+                    for (let index = 0; index < 10; index++) {
+                        var sjs = Math.ceil(Math.random() * 10000);
+                        //生成随机范围` 
+                        for (var j = 0; j < gailvArr.length; j++) {
+                            var zxs = gailvnum[j][0]
+                            var zds = gailvnum[j][1]
+                            if (sjs >= zxs && sjs <= zds) {
+                                SetjlZcx(j);
+                                $("#jlname" + index).text(gailvArr[j][0]);
+                            }
+
                         }
+
+
 
                     }
 
 
-    
-}
 
-
-                    
                     Showwd("#popJl")
                     KeyAdd(-10)
                 }
@@ -1432,72 +1392,122 @@ for (let index = 0; index < 10; index++) {
 
             }
             // 打开弹窗方法
-function ChangeGailv(){
-for(i=0;i<Pgailv.length;i++)
-{
-    gailvArr[i][0]=$("#Xgname"+i).val();
-    gailvArr[i][1]=$("#Xggl"+i).val()*1;
-    
-}
+            function ChangeGailv() {
+                for (i = 0; i < Pgailv.length; i++) {
+                    gailvArr[i][0] = $("#Xgname" + i).val();
+                    gailvArr[i][1] = $("#Xggl" + i).val() * 1;
 
-    SetGailv();
-    ShutWindow();
-    $("#xtxx").text("概率和名称已保存");
-    Showwd("#xttc")
+                }
 
-    
-}
-//设置概率的方法
-
-function ResetGailv(){
-gailvArr=[
-                ['QBZ03-冠军之薇皮肤', 0.15, 15],
-                ['柯尔特-冠军之特', 0.20, 12],
-                ['火麒麟-冠军之心皮肤', 0.30, 6],
-                ['毁灭-冠军之怒皮肤', 0.30, 6],
-                ['雷神-冠军之魄皮肤', 0.30, 6],
-                ['修罗-冠军之魂皮肤', 0.60, 3],
-                ['黄金猫猫手套-白鲨', 0.15, 8],
-                ['擎天-惨叫迹', 0.40, 8],
-                ['绝迹语音包兑换券', 0.15, 6],
-                ['N9语音包兑换券', 0.15, 6],
-                ['70KG语音包兑换券', 0.15, 6],
-                ['白鲨语音包兑换券', 0.15, 6],
-                ['1000经验值', 1.00, 0],
-                ['500经验值', 7.00, 0],
-                ['200经验值', 46.00, 0],
-                ['100经验值', 43.00, 0]
-            ];
-            SetGailv();
-    ShutWindow();
-    $("#xtxx").text("概率和名称已重置");
-    Showwd("#xttc")
-
-}
-//重置概率方法
+                SetGailv();
+                ShutWindow();
+                $("#xtxx").text("概率和名称已保存");
+                Showwd("#xttc")
 
 
+            }
+            //设置概率的方法
 
-function ShutWindow(){
-    $("#zhezhao").css("display", "none");
-                    $("#ycrq").css("display", "none");
-                    $(".dialog").css("display", "none");
-                    $(".amsdialog_modal").css("display", "none")
-                
-}
+            function ResetGailv() {
+                gailvArr = [
+                    ['QBZ03-冠军之薇皮肤', 0.15, 15],
+                    ['柯尔特-冠军之特', 0.20, 12],
+                    ['火麒麟-冠军之心皮肤', 0.30, 6],
+                    ['毁灭-冠军之怒皮肤', 0.30, 6],
+                    ['雷神-冠军之魄皮肤', 0.30, 6],
+                    ['修罗-冠军之魂皮肤', 0.60, 3],
+                    ['黄金猫猫手套-白鲨', 0.15, 8],
+                    ['擎天-惨叫迹', 0.40, 8],
+                    ['绝迹语音包兑换券', 0.15, 6],
+                    ['N9语音包兑换券', 0.15, 6],
+                    ['70KG语音包兑换券', 0.15, 6],
+                    ['白鲨语音包兑换券', 0.15, 6],
+                    ['1000经验值', 1.00, 0],
+                    ['500经验值', 7.00, 0],
+                    ['200经验值', 46.00, 0],
+                    ['100经验值', 43.00, 0]
+                ];
+                SetGailv();
+                ShutWindow();
+                $("#xtxx").text("概率和名称已重置");
+                Showwd("#xttc")
+
+            }
+            //重置概率方法
+
+            var zjcs = 0;
+            var ksz = ["", "", ""]
+            var ksz2 = ["", 1, false];
+            function SetjlZcx(pid) {
+                let time = new Date()
+                ksz[0] = time.toLocaleString();
+                ksz[1] = "广东电信一区";
+                ksz[2] = gailvArr[pid][0];
+                zjjlt.push(ksz);
+                $("#zjjltb").prepend("<tr><td>" + ksz[0] + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
+
+
+
+                if (gailvArr[pid][2] > 0) {
+                    ksz2[0] = gailvArr[pid][0];
+                    ksz2[1] = gailvArr[pid][2];
+
+                    zcxxz.push(ksz2);
+
+                    $("#zcxtb").prepend(" <tr id='zcxid" + zjcs + "'><td>" + ksz2[0] + "</td><td> <a  id='fckid" + zjcs + "'>[发送仓库]</a> </td><td> <a onclick='Fjkey(" + gailvArr[pid][2] + "," + zjcs + ")'  id='fjbtnid" + zjcs + "'>[分解]</a></td></tr>");
+                    console.log(zcxxz)
+                    zjcs++;
+                }
+
+
+            }
+
+
+            var zcxbcdk = false;
+            function Fjkey(kn, zcxid) {
+                KeyAdd(kn);
+                ShutWindow();
+                $("#xtxx").text("恭喜获得礼包：分解钥匙*" + kn);
+                Showwd("#xttc")
+zcxbcdk=true;
+$("#zcxid"+zcxid).children().css("color","grey")
+$("#fckid"+zcxid).before("发送仓库")
+$("#fckid"+zcxid).remove();
+$("#fjbtnid"+zcxid).before("已分解")
+$("#fjbtnid"+zcxid).remove();
+
+
+
+            }
+
+
+            function ShutWindow() {
+                $("#zhezhao").css("display", "none");
+                $("#ycrq").css("display", "none");
+                $(".dialog").css("display", "none");
+                $(".amsdialog_modal").css("display", "none")
+
+            }
 
             $(".amsdialog_bconfirm").click(
                 function () {
-                    ShutWindow() })
+                    ShutWindow()
+                    if (zcxbcdk) {
+                        Showwd('#showMyGiftContent2')
+                        zcxbcdk = false;
+                    }
+                })
             $(".dia-close").click(
                 function () {
-                    ShutWindow() });
+                    ShutWindow()
+                });
             $(".amsdialog_close").click(
                 function () {
-                    $("#zhezhao").css("display", "none");
-                    $("#ycrq").css("display", "none");
-                    $(".dialog").css("display", "none");
-                    $(".amsdialog_modal").css("display", "none")
+                    ShutWindow()
+                    if (zcxbcdk) {
+                        Showwd('#showMyGiftContent2')
+                        zcxbcdk = false;
+                    }
                 })
                 // $("#ycrq").click(
                 // function () {
