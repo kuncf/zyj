@@ -2,136 +2,235 @@
 <html>
 
 <style>
-    html{
+    html {
         height: 100%;
     }
-    body{
+
+    body {
         height: 100%;
+        padding: 0;
     }
+
     a {
         color: white;
     }
+
     div.amsdialog_header {
-    line-height: 30px;
-    color: #fff;
-    background-color: #2196F3;
-    padding: 0px 5px;
-    font-size: 16px;
-}
-a.amsdialog_close {
-    float: right;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 24px;
-}
-.amsdialog_cmain {
-    padding: 5px;
-    min-height: 50px;
-    font-size: 14px;
-    color: #000;
-}
-div.amsdialog_footer a.amsdialog_btn.amsdialog_bconfirm {
-    background-color: #2096f3;
-}
-div.amsdialog_footer {
-    line-height: 40px;
-    text-align: right;
-}
-div.amsdialog_footer a.amsdialog_btn {
-    line-height: 30px;
-    display: inline-block;
-    min-width: 100px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    border-radius: 3px;
-    margin: 0px 5px;
-}
-.midas_minipay_dialog_mask {
-    position: fixed;
-    _position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 4000;
-    background-color: #000;
-    -moz-opacity: 0.3;
-    opacity: 0.3;
-    filter: alpha(opacity=100);
-}
-.pop5{
-    display: block; 
-    visibility: visible; 
-    position: fixed; 
-    z-index: -1; 
-    left: 50%; 
-    top: 50%; 
-    margin-top: -180.5px; 
-    margin-left: -361px;
-}
+        line-height: 30px;
+        color: #fff;
+        background-color: #2196F3;
+        padding: 0px 5px;
+        font-size: 16px;
+    }
 
-.pop4{
-    display: block; 
-    visibility: visible; 
-    position: fixed; 
-    z-index: -1; 
-    left: 50%; 
-    top: 50%; 
-    margin-top: -380.5px; 
-    margin-left: -361px;
-}
+    a.amsdialog_close {
+        float: right;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 24px;
+    }
 
-.tc-box{
-    display: block; 
-    visibility: visible; 
-    position: fixed; 
-    z-index: -1; 
-    left: 50%; 
-    top: 50%; 
-    margin-top: -600.5px; 
-    margin-left: -361px;
-    transform: scale(0.85);
-}
-.dialog{
-    display: block; 
-    visibility: visible; 
-    position: fixed; 
-    z-index: -1; 
-    left: 50%; 
-    top: 50%; 
-   
-}
-.glb-box{
-    margin-top: -400px; 
-    margin-left: -361px;
-}
-.Setinput{
-    background: transparent;
-    color: white;
-    border: 0;
-    text-align: center;
-    transition-duration: 0.2s;
-}
-.Setinput:hover{
-    transform: scale(1.04);
-}
-.Setinput:focus{
-    transform: scale(1.1);
-    border: 1px solid black;
-    
-}
-.sbbtn{
-    width: 200px;
-    line-height: 40px;
-    margin: 8px;
-    cursor: pointer;
-    transition-duration: 0.2s;
-}
-.sbbtn:hover{
-opacity: 0.9;
-}
+    .amsdialog_cmain {
+        padding: 5px;
+        min-height: 50px;
+        font-size: 14px;
+        color: #000;
+    }
+
+    .ost_inner {
+        width: 980px;
+        height: 43px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 100;
+        font-size: 12px;
+        line-height: 43px;
+        color: #666;
+    }
+
+    .ost_logo,
+    .ost_ul li.ost_line {
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+
+    .ost_fr i.fr {
+        float: right;
+    }
+
+    .ost_fr i {
+        font-style: normal;
+        color: #e7e7e7;
+        margin-left: 10px;
+    }
+
+    .tlogin {
+        float: right;
+    }
+
+    .ost_inner a {
+        color: #666;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .ost_fr {
+        float: right;
+        margin-left: 10px;
+    }
+
+    div.amsdialog_footer a.amsdialog_btn.amsdialog_bconfirm {
+        background-color: #2096f3;
+    }
+
+    div.amsdialog_footer {
+        line-height: 40px;
+        text-align: right;
+    }
+
+    div.amsdialog_footer a.amsdialog_btn {
+        line-height: 30px;
+        display: inline-block;
+        min-width: 100px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 3px;
+        margin: 0px 5px;
+    }
+
+    .midas_minipay_dialog_mask {
+        position: fixed;
+        _position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 4000;
+        background-color: #000;
+        -moz-opacity: 0.3;
+        opacity: 0.3;
+        filter: alpha(opacity=100);
+    }
+
+    .pop5 {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        z-index: -1;
+        left: 50%;
+        top: 50%;
+        margin-top: -180.5px;
+        margin-left: -361px;
+    }
+
+    .pop4 {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        z-index: -1;
+        left: 50%;
+        top: 50%;
+        margin-top: -380.5px;
+        margin-left: -361px;
+    }
+
+    .tc-box {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        z-index: -1;
+        left: 50%;
+        top: 50%;
+        margin-top: -600.5px;
+        margin-left: -361px;
+        transform: scale(0.85);
+    }
+
+    .dialog {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        z-index: -1;
+        left: 50%;
+        top: 50%;
+
+    }
+
+    .glb-box {
+        margin-top: -400px;
+        margin-left: -361px;
+    }
+
+    .Setinput {
+        background: transparent;
+        color: white;
+        border: 0;
+        text-align: center;
+        transition-duration: 0.2s;
+    }
+
+    .Setinput:hover {
+        transform: scale(1.04);
+    }
+
+    .Setinput:focus {
+        transform: scale(1.1);
+        border: 1px solid black;
+
+    }
+
+    .sbbtn {
+        width: 200px;
+        line-height: 40px;
+        margin: 8px;
+        cursor: pointer;
+        transition-duration: 0.2s;
+    }
+
+    .sbbtn:hover {
+        opacity: 0.9;
+    }
+
+    .ost_box {
+        width: 100%;
+        min-width: 980px;
+        background-position: 0 0;
+        background-repeat: repeat-x;
+        background-color: #ffffff;
+        height: 43px;
+        border: 1px solid #c9c9c9;
+        border-width: 1px 0;
+        -webkit-text-size-adjust: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10000;
+    }
+
+    .ost_djlogo {
+        background-position: 0 -46px;
+        width: 140px;
+        height: 39px;
+        display: block;
+    }
+
+    .amsdialog_modal {
+        left: 50%;
+        top: 50%;
+        margin-left: -205px;
+        margin-top: -65px;
+        min-width: 400px;
+        max-width: 100%;
+        background-color: white;
+        font-size: 14px;
+        z-index: 100008;
+        display: block;
+        position: fixed;
+    }
 </style>
 
 <head>
@@ -154,19 +253,6 @@ opacity: 0.9;
 <body>
     <!--<script></script>-->
 
-    <!-- 单抽弹窗 -->
-    <!--div class="dialog pop5 pr" id="popdc" style="display: block; visibility: visible; position: fixed; z-index: 9999; left: 50%; top: 50%; margin-top: -180.5px; margin-left: -361px;" data-milodialog="1" role="dialog" tabindex="-1">
-	<div class="dia-con">
-		<h3 class="tc-tit1"></h3>
-		<p class="ptxt">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
-		<ul class="list_jl">
-			<li id="jlname">100经验值</li>
-		</ul>
-		<p class="ptxt1">温馨提示:1.虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持.由于数据量巨大，奖励道具显示将有所延迟，或可存在不展示的情况，请以礼包记录为准。</p>
-	</div>
-	<a class="close sp db dia-close" href="javascript:closeDialog();enter(1000);" title="关闭">×</a>
-</div-->
-    <!-- 单抽弹窗 -->
 
 
 
@@ -194,152 +280,157 @@ opacity: 0.9;
 
 
 
-<!-- 系统消息弹窗 >
-    <div class="amsdialog_modal"
-        style="left: 0px; top:0px;bottom: 0;right: 0;margin:auto; min-width: 400px; max-width: 100%; background-color: white; font-size: 14px; z-index: 100008; display: block; position: fixed;" id="amsopenFrame_1676208528411">
+
+
+    <div class="midas_minipay_dialog_mask" id="zhezhao" style="display: none;">
+    </div>
+    <!-- 遮罩div -->
+
+
+    <!-- 隐藏弹窗的容器 -->
+    <!-- 系统消息弹窗 -->
+    <div class="amsdialog_modal" style="display: none;" id="xttc">
         <div class="amsdialog_header" style="width:auto;"><a class="amsdialog_close"
                 href="javascript:void(0)">×</a><span>系统消息</span></div>
         <div class="amsdialog_content">
-            <div class="amsdialog_cmain" style="max-height: 480px; overflow: hidden auto; width: 400px;">抱歉，您的钥匙数量不足。
+            <div class="amsdialog_cmain" style="max-height: 480px; overflow: hidden auto; width: 400px;" id="xtxx">
+                抱歉，您的钥匙数量不足。
             </div>
             <div class="amsdialog_footer"><a href="javascript:void(0)" class="amsdialog_btn amsdialog_bconfirm"
                     style="display: inline-block;">确认</a><a href="javascript:void(0)"
                     class="amsdialog_btn amsdialog_bcancel" style="display: none;">取消</a></div>
         </div>
     </div>
-<!-- 系统消息弹窗 -->
-
-<div class="midas_minipay_dialog_mask" id="zhezhao" style="display: none;">
-</div>
-<!-- 遮罩div -->
-
-<!-- 隐藏弹窗的容器 -->
-<div  class="midas_minipay_dialog_mask" id="ycrq" style="opacity:1; background: transparent;display: none;">
-    <div class="dialog djq-box" id="pop2" style="   display:none">
-        <iframe frameborder="0" height="800px" id="cf_djq"
-            src="//act.daoju.qq.com/act/a20190301yqrh/pop.html?sorce=pc" width="810px"></iframe>
-        <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
-    </div>
-    <!--代金券记录E-->
+    <!-- 系统消息弹窗 -->
 
 
-    <!--调概率 start-->
-    <div class="dialog glb-box" id="SetGailv" style="   display:none">
-        <div class="dia-con">
-            <div class="glb">
-                <table cellpadding="0" cellspacing="0">
-                    <tbody>
-                        <tr>
-                            <th style="width: 70%;">修改道具名</th>
-                            <th style="width: 30%;">修改概率</th>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="QBZ03-冠军之薇皮肤"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.15"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="柯尔特-冠军之特"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.20"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="火麒麟-冠军之心皮肤"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.30"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="毁灭-冠军之怒皮肤"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.30"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="雷神-冠军之魄皮肤"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.30"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="修罗-冠军之魂皮肤"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.60"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="黄金猫猫手套-白鲨"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.15"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="擎天-惨叫迹"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.40"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="绝迹语音包兑换券"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.15"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="N9语音包兑换券"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.15"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="70KG语音包兑换券"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.15"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="白鲨语音包兑换券"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="0.15"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="1000经验值"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="1.00"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="500经验值"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="7.00"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="200经验值"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="46.00"></td>
-                        </tr>
-                        <tr>
-                            <td><input class="Setinput" type="text" id="Xgname" value="100经验值"></td>
-                            <td><input class="Setinput" type="text" id="Xggl" value="43.00"></td>
-                        </tr>
-                        <tr>
-                            <td><button class="sbbtn">保存</button></td>
-                            <td><button  class="sbbtn">重置</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+
+    <div class="midas_minipay_dialog_mask" id="ycrq" style="opacity:1; background: transparent;display: none;">
+        <div class="dialog djq-box" id="pop2" style="   display:none">
+            <iframe frameborder="0" height="800px" id="cf_djq"
+                src="//act.daoju.qq.com/act/a20190301yqrh/pop.html?sorce=pc" width="810px"></iframe>
+            <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
         </div>
-        <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
-    </div>
-    <!--调概率 end-->
+        <!--代金券记录E-->
 
 
-    <!-- 获奖记录start -->
-    <div class="dialog jl-box" id="showMyGiftContent1" style="   display:none">
-        <div class="dia-con">
-            <h3 class="tc-tit2"></h3>
-            <div class="award">
-                <table cellpadding="0" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th style="width: 30%">时间</th>
-                            <th style="width: 30%">大区</th>
-                            <th style="width: 40%">道具</th>
-                        </tr>
-                        <tr>
-                            <td>2023/2/12</td>
-                            <td>广东电信一区</td>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                        </tr>
-                    </thead>
-                    <tbody id="milo-lotteryRecordContainer1">
-                    </tbody>
-                </table>
-                <div class="btn-switch milo-paginator" id="milo-paginator1">
+        <!--调概率 start-->
+        <div class="dialog glb-box" id="SetGailv" style="   display:none">
+            <div class="dia-con">
+                <div class="glb">
+                    <table cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <th style="width: 70%;">修改道具名</th>
+                                <th style="width: 30%;">修改概率</th>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname0" value="QBZ03-冠军之薇皮肤"></td>
+                                <td><input class="Setinput" type="text" id="Xggl0" value="0.15"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname1" value="柯尔特-冠军之特"></td>
+                                <td><input class="Setinput" type="text" id="Xggl1" value="0.20"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname2" value="火麒麟-冠军之心皮肤"></td>
+                                <td><input class="Setinput" type="text" id="Xggl2" value="0.30"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname3" value="毁灭-冠军之怒皮肤"></td>
+                                <td><input class="Setinput" type="text" id="Xggl3" value="0.30"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname4" value="雷神-冠军之魄皮肤"></td>
+                                <td><input class="Setinput" type="text" id="Xggl4" value="0.30"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname5" value="修罗-冠军之魂皮肤"></td>
+                                <td><input class="Setinput" type="text" id="Xggl5" value="0.60"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname6" value="黄金猫猫手套-白鲨"></td>
+                                <td><input class="Setinput" type="text" id="Xggl6" value="0.15"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname7" value="擎天-惨叫迹"></td>
+                                <td><input class="Setinput" type="text" id="Xggl7" value="0.40"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname8" value="绝迹语音包兑换券"></td>
+                                <td><input class="Setinput" type="text" id="Xggl8" value="0.15"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname9" value="N9语音包兑换券"></td>
+                                <td><input class="Setinput" type="text" id="Xggl9" value="0.15"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname10" value="70KG语音包兑换券"></td>
+                                <td><input class="Setinput" type="text" id="Xggl10" value="0.15"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname11" value="白鲨语音包兑换券"></td>
+                                <td><input class="Setinput" type="text" id="Xggl11" value="0.15"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname12" value="1000经验值"></td>
+                                <td><input class="Setinput" type="text" id="Xggl12" value="1.00"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname13" value="500经验值"></td>
+                                <td><input class="Setinput" type="text" id="Xggl13" value="7.00"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname14" value="200经验值"></td>
+                                <td><input class="Setinput" type="text" id="Xggl14" value="46.00"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="Setinput" type="text" id="Xgname15" value="100经验值"></td>
+                                <td><input class="Setinput" type="text" id="Xggl15" value="43.00"></td>
+                            </tr>
+                            <tr>
+                                <td><button class="sbbtn" onclick="ChangeGailv()">保存</button></td>
+                                <td><button class="sbbtn" onclick="ResetGailv()">重置</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <p class="tips">温馨提示：虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持！</p>
+            <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
         </div>
-        <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
-    </div>
+        <!--调概率 end-->
 
-    <script id="milo-lotteryRecordTpl1" type="text/html">
+
+        <!-- 获奖记录start -->
+        <div class="dialog jl-box" id="showMyGiftContent1" style="   display:none">
+            <div class="dia-con">
+                <h3 class="tc-tit2"></h3>
+                <div class="award">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">时间</th>
+                                <th style="width: 30%">大区</th>
+                                <th style="width: 40%">道具</th>
+                            </tr>
+                            <tr>
+                                <td>2023/2/12</td>
+                                <td>广东电信一区</td>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                            </tr>
+                        </thead>
+                        <tbody id="milo-lotteryRecordContainer1">
+                        </tbody>
+                    </table>
+                    <div class="btn-switch milo-paginator" id="milo-paginator1">
+                    </div>
+                </div>
+                <p class="tips">温馨提示：虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持！</p>
+            </div>
+            <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
+        </div>
+
+        <script id="milo-lotteryRecordTpl1" type="text/html">
 {@ if(data.length == 0){@}
 <tr>
     <td colspan="3" align="center">暂未获取更多礼包</td>
@@ -354,140 +445,140 @@ opacity: 0.9;
 {@ } @}
 {@}@}
 </script>
-    <!--获奖记录end-->
+        <!--获奖记录end-->
 
-    <!--暂存箱 start-->
-    <div class="dialog tc-box" id="showMyGiftContent2" style="   display:none">
-        <div class="dia-con">
-            <div class="zcx">
-                <table cellpadding="0" cellspacing="0">
-                    <thead>
+        <!--暂存箱 start-->
+        <div class="dialog tc-box" id="showMyGiftContent2" style="   display:none">
+            <div class="dia-con">
+                <div class="zcx">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th style="width: 40%;">名称</th>
+                                <th style="width: 30%;">领取道具</th>
+                                <th style="width: 30%;">分解为钥匙</th>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td> <a href="">[发送仓库]</a> </td>
+                                <td> <a href="">[分解]</a></td>
+                            </tr>
+                        </thead>
+                        <tbody id="milo-lotteryRecordContainer2"></tbody>
+                    </table>
+                    <div class="btn-switch milo-paginator" id="milo-paginator2">
+                    </div>
+                </div>
+                <div class="fjb">
+                    <table cellpadding="0" cellspacing="0">
                         <tr>
-                            <th style="width: 40%;">名称</th>
-                            <th style="width: 30%;">领取道具</th>
-                            <th style="width: 30%;">分解为钥匙</th>
+                            <th style="width: 50%;">道具名称</th>
+                            <th style="width: 50%;">分解所获钥匙</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="roll-tab">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th style="width: 50%;"></th>
+                            <th style="width: 50%;"></th>
                         </tr>
                         <tr>
                             <td>QBZ03-冠军之薇皮肤</td>
-                            <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>15</td>
                         </tr>
                         <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                              <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>柯尔特-冠军之特</td>
+                            <td>12</td>
                         </tr>
                         <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                              <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>火麒麟-冠军之心皮肤</td>
+                            <td>6</td>
                         </tr>
                         <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                              <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>毁灭-冠军之怒皮肤</td>
+                            <td>6</td>
                         </tr>
                         <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                              <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>雷神-冠军之魄皮肤</td>
+                            <td>6</td>
                         </tr>
                         <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                              <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>修罗-冠军之魂皮肤</td>
+                            <td>3</td>
                         </tr>
                         <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                              <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>黄金猫猫手套-白鲨</td>
+                            <td>8</td>
                         </tr>
                         <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                              <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>擎天-惨叫迹</td>
+                            <td>8</td>
                         </tr>
                         <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                              <td> <a href="">[发送仓库]</a> </td>
-                            <td> <a href="">[分解]</a></td>
+                            <td>绝迹语音包兑换券</td>
+                            <td>6</td>
                         </tr>
-                    </thead>
-                    <tbody id="milo-lotteryRecordContainer2"></tbody>
-                </table>
-                <div class="btn-switch milo-paginator" id="milo-paginator2">
+                        <tr>
+                            <td>N9语音包兑换券</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>70KG语音包兑换券</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>白鲨语音包兑换券</td>
+                            <td>6</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <div class="fjb">
-                <table cellpadding="0" cellspacing="0">
-                    <tr>
-                        <th style="width: 50%;">道具名称</th>
-                        <th style="width: 50%;">分解所获钥匙</th>
-                    </tr>
-                </table>
-            </div>
-            <div class="roll-tab">
-                <table cellpadding="0" cellspacing="0">
-                    <tr>
-                        <th style="width: 50%;"></th>
-                        <th style="width: 50%;"></th>
-                    </tr>
-                    <tr>
-                        <td>QBZ03-冠军之薇皮肤</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <td>柯尔特-冠军之特</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>火麒麟-冠军之心皮肤</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>毁灭-冠军之怒皮肤</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>雷神-冠军之魄皮肤</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>修罗-冠军之魂皮肤</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>黄金猫猫手套-白鲨</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>擎天-惨叫迹</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>绝迹语音包兑换券</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>N9语音包兑换券</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>70KG语音包兑换券</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>白鲨语音包兑换券</td>
-                        <td>6</td>
-                    </tr>
-                </table>
-            </div>
+            <p class="tips">温馨提示：虚拟道具奖品在24小时内发到您的游戏仓库。谢谢您的理解与支持。</p>
+            <a class="dia-close" href="javascript:closeDialog()" title="关闭"></a>
         </div>
-        <p class="tips">温馨提示：虚拟道具奖品在24小时内发到您的游戏仓库。谢谢您的理解与支持。</p>
-        <a class="dia-close" href="javascript:closeDialog()" title="关闭"></a>
-    </div>
 
-    <script id="milo-lotteryRecordTpl2" type="text/html">
+        <script id="milo-lotteryRecordTpl2" type="text/html">
 {@ if(data.length == 0){@}
 <tr>
     <td colspan="3">暂未获取更多礼包</td>
@@ -519,222 +610,245 @@ opacity: 0.9;
 {@ } @}
 {@}@}
 </script>
-    <!--暂存箱 end-->
+        <!--暂存箱 end-->
 
-    <!--中奖记录start 单抽-->
-    <div class="dialog pop5 pr cjxuanfu" id="popdc" style="   display:none;">
-        <div class="dia-con">
-            <h3 class="tc-tit1"></h3>
-            <p class="ptxt">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
-            <ul class="list_jl">
-                <li id="dczjxx">QBZ-金色蔷薇 冠军之薇皮肤</li>
-            </ul>
-            <p class="ptxt1">温馨提示:1.虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持.由于数据量巨大，奖励道具显示将有所延迟，或可存在不展示的情况，请以礼包记录为准。</p>
-        </div>
-        <a class="close sp db dia-close" href="javascript:closeDialog();enter(1000);" title="关闭">×</a>
-    </div>
-    <!--中奖记录end-->
-
-    <!--中奖记录start 10连-->
-    <div class="dialog pop4 pr" id="popJl" style="   display:none;">
-        <div class="dia-con">
-            <h3 class="tc-tit1"></h3>
-            <p class="ptxt">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
-
-            <ul class="list_jl">
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-                <li id="jlname">100经验值</li>
-            </ul>
-
-            <p class="ptxt1">温馨提示:1.虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持.由于数据量巨大，奖励道具显示将有所延迟，或可存在不展示的情况，请以礼包记录为准。</p>
-        </div>
-        <a class="close sp db dia-close" href="javascript:closeDialog();enter(1000);" title="关闭">×</a>
-    </div>
-    <!--中奖记录end-->
-
-    <!--概率表start-->
-    <div class="dialog glb-box" id="dia-glb" style="   display:none">
-        <div class="dia-con">
-            <div class="glb">
-                <table cellpadding="0" cellspacing="0">
-                    <tbody>
-                        <tr>
-                            <th style="width: 70%;">道具名</th>
-                            <th style="width: 30%;">概率</th>
-                        </tr>
-                        <tr>
-                            <td>QBZ03-冠军之薇皮肤</td>
-                            <td>0.15%</td>
-                        </tr>
-                        <tr>
-                            <td>柯尔特-冠军之特</td>
-                            <td>0.20%</td>
-                        </tr>
-                        <tr>
-                            <td>火麒麟-冠军之心皮肤</td>
-                            <td>0.30%</td>
-                        </tr>
-                        <tr>
-                            <td>毁灭-冠军之怒皮肤</td>
-                            <td>0.30%</td>
-                        </tr>
-                        <tr>
-                            <td>雷神-冠军之魄皮肤</td>
-                            <td>0.30%</td>
-                        </tr>
-                        <tr>
-                            <td>修罗-冠军之魂皮肤</td>
-                            <td>0.60%</td>
-                        </tr>
-                        <tr>
-                            <td>黄金猫猫手套-白鲨</td>
-                            <td>0.15%</td>
-                        </tr>
-                        <tr>
-                            <td>擎天-惨叫迹</td>
-                            <td>0.40%</td>
-                        </tr>
-                        <tr>
-                            <td>绝迹语音包兑换券</td>
-                            <td>0.15%</td>
-                        </tr>
-                        <tr>
-                            <td>N9语音包兑换券</td>
-                            <td>0.15%</td>
-                        </tr>
-                        <tr>
-                            <td>70KG语音包兑换券</td>
-                            <td>0.15%</td>
-                        </tr>
-                        <tr>
-                            <td>白鲨语音包兑换券</td>
-                            <td>0.15%</td>
-                        </tr>
-                        <tr>
-                            <td>1000经验值</td>
-                            <td>1.00%</td>
-                        </tr>
-                        <tr>
-                            <td>500经验值</td>
-                            <td>7.00%</td>
-                        </tr>
-                        <tr>
-                            <td>200经验值</td>
-                            <td>46.00%</td>
-                        </tr>
-                        <tr>
-                            <td>100经验值</td>
-                            <td>43.00%</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!--中奖记录start 单抽-->
+        <div class="dialog pop5 pr cjxuanfu" id="popdc" style="   display:none;">
+            <div class="dia-con">
+                <h3 class="tc-tit1"></h3>
+                <p class="ptxt">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
+                <ul class="list_jl">
+                    <li id="dczjxx">QBZ-金色蔷薇 冠军之薇皮肤</li>
+                </ul>
+                <p class="ptxt1">温馨提示:1.虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持.由于数据量巨大，奖励道具显示将有所延迟，或可存在不展示的情况，请以礼包记录为准。</p>
             </div>
+            <a class="close sp db dia-close" href="javascript:" title="关闭">×</a>
         </div>
-        <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
-    </div>
-    <!--概率表end-->
+        <!--中奖记录end-->
 
-    <!--语音包4选1 start-->
-    <div class="dialog tc1" id="dia-yyb" style="   display:none">
-        <ul class="ul-list">
-            <li>
-                <a class="spr tc-btn hzldh hzldh10" href="javascript:amsExchange(10);"
-                    onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn hzldh hzldh12" href="javascript:amsExchange(12);"
-                    onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn hzldh hzldh13" href="javascript:amsExchange(13);"
-                    onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn hzldh hzldh11" href="javascript:amsExchange(11);"
-                    onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
-            </li>
-        </ul>
-        <a class="dia-close" href="javascript:closeDialog()" title="关闭"></a>
-    </div>
-    <!--语音包4选1 end-->
+        <!--中奖记录start 10连-->
+        <div class="dialog pop4 pr" id="popJl" style="   display:none;">
+            <div class="dia-con">
+                <h3 class="tc-tit1"></h3>
+                <p class="ptxt">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
 
-    <!--炫彩背包 start-->
-    <div class="dialog tc2" id="dia-bb" style="   display:none">
-        <ul class="ul-list">
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(2);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(3);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(5);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(4);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(9);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(7);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(8);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(6);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(1);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
-                    title="立即兑换"></a>
-            </li>
-            <li>
-                <a class="spr tc-btn" href="javascript:amsSelectBag(10);"
-                    onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
-            </li>
-        </ul>
-        <a class="dia-close" href="javascript:closeDialog()" title="关闭"></a>
-    </div>
-    <!--炫彩背包 end-->
+                <ul class="list_jl">
+                    <li id="jlname0">100经验值</li>
+                    <li id="jlname1">100经验值</li>
+                    <li id="jlname2">100经验值</li>
+                    <li id="jlname3">100经验值</li>
+                    <li id="jlname4">100经验值</li>
+                    <li id="jlname5">100经验值</li>
+                    <li id="jlname6">100经验值</li>
+                    <li id="jlname7">100经验值</li>
+                    <li id="jlname8">100经验值</li>
+                    <li id="jlname9">100经验值</li>
+                </ul>
 
-    <!--二维码弹窗-->
-    <div class="dialog djc-code pr" id="djc-code" style="display: none;">
-        <div class="dia-con">
-            <!--<h3 class="tc-tit1"></h3>-->
-            <!--<p class="ptxt">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
+                <p class="ptxt1">温馨提示:1.虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持.由于数据量巨大，奖励道具显示将有所延迟，或可存在不展示的情况，请以礼包记录为准。</p>
+            </div>
+            <a class="close sp db dia-close" href="javascript:" title="关闭">×</a>
+        </div>
+        <!--中奖记录end-->
+
+        <!--概率表start-->
+        <div class="dialog glb-box" id="dia-glb" style="   display:none">
+            <div class="dia-con">
+                <div class="glb">
+                    <table cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <th style="width: 70%;">道具名</th>
+                                <th style="width: 30%;">概率</th>
+                            </tr>
+                            <tr>
+                                <td>QBZ03-冠军之薇皮肤</td>
+                                <td>0.15%</td>
+                            </tr>
+                            <tr>
+                                <td>柯尔特-冠军之特</td>
+                                <td>0.20%</td>
+                            </tr>
+                            <tr>
+                                <td>火麒麟-冠军之心皮肤</td>
+                                <td>0.30%</td>
+                            </tr>
+                            <tr>
+                                <td>毁灭-冠军之怒皮肤</td>
+                                <td>0.30%</td>
+                            </tr>
+                            <tr>
+                                <td>雷神-冠军之魄皮肤</td>
+                                <td>0.30%</td>
+                            </tr>
+                            <tr>
+                                <td>修罗-冠军之魂皮肤</td>
+                                <td>0.60%</td>
+                            </tr>
+                            <tr>
+                                <td>黄金猫猫手套-白鲨</td>
+                                <td>0.15%</td>
+                            </tr>
+                            <tr>
+                                <td>擎天-惨叫迹</td>
+                                <td>0.40%</td>
+                            </tr>
+                            <tr>
+                                <td>绝迹语音包兑换券</td>
+                                <td>0.15%</td>
+                            </tr>
+                            <tr>
+                                <td>N9语音包兑换券</td>
+                                <td>0.15%</td>
+                            </tr>
+                            <tr>
+                                <td>70KG语音包兑换券</td>
+                                <td>0.15%</td>
+                            </tr>
+                            <tr>
+                                <td>白鲨语音包兑换券</td>
+                                <td>0.15%</td>
+                            </tr>
+                            <tr>
+                                <td>1000经验值</td>
+                                <td>1.00%</td>
+                            </tr>
+                            <tr>
+                                <td>500经验值</td>
+                                <td>7.00%</td>
+                            </tr>
+                            <tr>
+                                <td>200经验值</td>
+                                <td>46.00%</td>
+                            </tr>
+                            <tr>
+                                <td>100经验值</td>
+                                <td>43.00%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a class="dia-close" href="javascript:closeDialog()" title="关闭">x</a>
+        </div>
+        <!--概率表end-->
+
+        <!--语音包4选1 start-->
+        <div class="dialog tc1" id="dia-yyb" style="   display:none">
+            <ul class="ul-list">
+                <li>
+                    <a class="spr tc-btn hzldh hzldh10" href="javascript:amsExchange(10);"
+                        onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn hzldh hzldh12" href="javascript:amsExchange(12);"
+                        onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn hzldh hzldh13" href="javascript:amsExchange(13);"
+                        onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn hzldh hzldh11" href="javascript:amsExchange(11);"
+                        onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
+                </li>
+            </ul>
+            <a class="dia-close" href="javascript:closeDialog()" title="关闭"></a>
+        </div>
+        <!--语音包4选1 end-->
+
+        <!--炫彩背包 start-->
+        <div class="dialog tc2" id="dia-bb" style="   display:none">
+            <ul class="ul-list">
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(2);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(3);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(5);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(4);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(9);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(7);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(8);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(6);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(1);" onclick="PTTSendClick('btn','ljdh','立即兑换')"
+                        title="立即兑换"></a>
+                </li>
+                <li>
+                    <a class="spr tc-btn" href="javascript:amsSelectBag(10);"
+                        onclick="PTTSendClick('btn','ljdh','立即兑换')" title="立即兑换"></a>
+                </li>
+            </ul>
+            <a class="dia-close" href="javascript:closeDialog()" title="关闭"></a>
+        </div>
+        <!--炫彩背包 end-->
+
+        <!--二维码弹窗-->
+        <div class="dialog djc-code pr" id="djc-code" style="display: none;">
+            <div class="dia-con">
+                <!--<h3 class="tc-tit1"></h3>-->
+                <!--<p class="ptxt">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
     <ul class="list_jl">
         <li id="jlname">xxxxxxx</li>
     </ul>-->
-            <img src="static/picture/djc-code.png" alt="二维码" />
-            <p>扫码前往/下载掌火，至活动页面领取经验值奖励</p>
+                <img src="static/picture/djc-code.png" alt="二维码" />
+                <p>扫码前往/下载掌火，至活动页面领取经验值奖励</p>
+            </div>
+            <a class="dia-close" href="javascript:" title="关闭">×</a>
         </div>
-        <a class="dia-close" href="javascript:closeDialog();" title="关闭">×</a>
+
+        <!--    dia end-->
     </div>
 
-    <!--    dia end-->
-</div>
+
+    </div>
+    <!-- 隐藏弹窗的容器 -->
 
 
-</div>
-<!-- 隐藏弹窗的容器 -->
 
+
+
+
+
+
+    <div class="ost_box">
+        <ul class="ost_inner">
+
+
+
+            <li class="ost_fr"><a href="//daoju.qq.com/mall/tao.shtml" target="_blank" title="折扣道具">折扣道具</a><i>|</i>
+            </li>
+            <li class="ost_fr"><a href="//daoju.qq.com/mall/actcenter.shtml" target="_blank"
+                    title="精彩活动">精彩活动</a><i>|</i></li>
+            <li class="ost_fr"><i class="fr">|</i><span class="tlogin"><span id="tunlogin">您还未登录，请<a
+                            href="javascript:LoginManager.login();" title="登录">登录</a></span><span style="display:none;"
+                        id="tlogined">欢迎你，<a href="//daoju.qq.com/mall/center.shtml" title="个人中心"><span
+                                id="tlogin_qq_span">-</span></a>&nbsp;&nbsp;&nbsp;<a href="javascript:loginOut();"
+                            title="退出">退出</a></span></span></li>
+        </ul>
+    </div>
     <div class="wrapper">
         <!--    section start-->
         <div class="head-box">
@@ -786,18 +900,16 @@ opacity: 0.9;
                 <div class="content">
                     <h1 class="spr tit1" onclick="Showwd('#SetGailv')"></h1>
                     <div class="buy">
-                        <a class="spr btn-buy1" href="javascript:amsBuy(1);" onclick="KeyAdd(1)" title="购买复活币"></a>
-                        <a class="spr btn-buy2" href="javascript:amsBuy(2);" onclick="KeyAdd(1)" title="购买复活币"></a>
-                        <a class="spr btn-buy3" href="javascript:amsBuyDi();" onclick="KeyAdd(11)" title="购买复活币"></a>
+                        <a class="spr btn-buy1" href="javascript:;" onclick="KeyAdd(1)" title="购买复活币"></a>
+                        <a class="spr btn-buy2" href="javascript:;" onclick="KeyAdd(1)" title="购买复活币"></a>
+                        <a class="spr btn-buy3" href="javascript:;" onclick="KeyAdd(11)" title="购买复活币"></a>
                         <p>我的代金券：<span class="jf_2327">0</span></p>
                     </div>
                     <div class="all-award">
                         <div class="raf">
                             <p>剩余钥匙：<span class="jf_5430" id="Keynum">0</span></p>
-                            <a class="spr btn-raf1" 
-                                onclick="PTTSendClick1()" title="抽一次"></a>
-                            <a class="spr btn-raf2" 
-                                onclick="PTTSendClick10()" title="抽十次"></a>
+                            <a class="spr btn-raf1" onclick="PTTSendClick1()" title="抽一次"></a>
+                            <a class="spr btn-raf2" onclick="PTTSendClick10()" title="抽十次"></a>
                         </div>
                     </div>
                     <div class="storage">
@@ -806,7 +918,7 @@ opacity: 0.9;
                                 <p class="sto-info">抽奖获得的可分解道具进入暂存箱，其余道具直接发往游戏内</p>
                                 <div class="spr dj1"></div>
                                 <a class="spr btn-zcx" href="javascript:amsHistoryList(2);"
-                                onclick="Showwd('#showMyGiftContent2')" title="暂存箱"></a>
+                                    onclick="Showwd('#showMyGiftContent2')" title="暂存箱"></a>
                             </li>
                             <li>
                                 <div class="spr dj2">
@@ -1165,16 +1277,16 @@ opacity: 0.9;
         <!--    section end-->
         <!--    dia start-->
         <!--代金券记录S-->
-      
-    <!--右侧浮窗-->
-    <div class="right-nav">
-        <!--    <a class="btn-look" href="javascript:;" onclick="PTTSendClick('btn','btncheck','点击查看');" title="点击查看"></a>-->
-        <a class="btn-kf" href="https://kf.qq.com/faq/230209YN3UjQ2302092mIrMN.html"
-            onclick="PTTSendClick('btn','lxkf','联系客服')" title="联系客服"></a>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <!--<script src="static/js/milo.gbk.min"></script>
+        <!--右侧浮窗-->
+        <div class="right-nav">
+            <!--    <a class="btn-look" href="javascript:;" onclick="PTTSendClick('btn','btncheck','点击查看');" title="点击查看"></a>-->
+            <a class="btn-kf" href="https://kf.qq.com/faq/230209YN3UjQ2302092mIrMN.html"
+                onclick="PTTSendClick('btn','lxkf','联系客服')" title="联系客服"></a>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+        <!--<script src="static/js/milo.gbk.min"></script>
     <script src="static/js/milo.gbk.min"></script>
     <script src="static/js/milo"></script>
     <script src="static/js/dj_header_v2"></script>
@@ -1184,76 +1296,224 @@ opacity: 0.9;
     <script src="static/js/swiper-3.4.2.min"></script>
     <script src="static/js/public"></script>
     <script src="static/js/index"></script>-->
-    <!--<script src="static/js/common"></script>-->
-    <!--<script src="static/js/banner"></script>-->
-    <script>
-        var keynum = 0;
-        //定义钥匙数量
+        <!--<script src="static/js/common"></script>-->
+        <!--<script src="static/js/banner"></script>-->
+        <script>
+            var keynum = 0;
+            //定义钥匙数量
+            const Pgailv = [
+                ['QBZ03-冠军之薇皮肤', 0.15, 15],
+                ['柯尔特-冠军之特', 0.20, 12],
+                ['火麒麟-冠军之心皮肤', 0.30, 6],
+                ['毁灭-冠军之怒皮肤', 0.30, 6],
+                ['雷神-冠军之魄皮肤', 0.30, 6],
+                ['修罗-冠军之魂皮肤', 0.60, 3],
+                ['黄金猫猫手套-白鲨', 0.15, 8],
+                ['擎天-惨叫迹', 0.40, 8],
+                ['绝迹语音包兑换券', 0.15, 6],
+                ['N9语音包兑换券', 0.15, 6],
+                ['70KG语音包兑换券', 0.15, 6],
+                ['白鲨语音包兑换券', 0.15, 6],
+                ['1000经验值', 1.00, 0],
+                ['500经验值', 7.00, 0],
+                ['200经验值', 46.00, 0],
+                ['100经验值', 43.00, 0]
+            ]
+            //定义初始概率表
+            var gailvArr = Pgailv;
+            //定义可修改概率,且初始化。
+            var gailvnum = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0],
+            [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0][0, 0],];
+            //定义（初始化）概率范围数组
 
-
-
-
-        function KeyAdd(addnum) {
-
-            keynum = keynum + addnum;
-            if (addnum > 0) {
-                //alert("您已成功添加"+addnum+"把钥匙！");
+            SetGailv();
+            var empsz = [0, 0];
+            //定义空概率范围数组
+            function SetGailv() {
+                for (i = 0; i < gailvArr.length; i++) {
+                    if (i == 0) {
+                        empsz = [1, gailvArr[0][1] * 100];
+                        gailvnum[i] = empsz;
+                    }
+                    else {
+                        empsz = [gailvnum[i - 1][1] + 1, gailvnum[i - 1][1] + gailvArr[i][1] * 100];
+                        gailvnum[i] = empsz;
+                    }
+                }
             }
-            Sxsj();
-        }
-        // 添加钥匙方法
-
-function PTTSendClick1(){
-Showwd("#popdc")
-KeyAdd(-1)
-
-}
+            //设置概率方法
 
 
-function PTTSendClick10(){
-Showwd("#popJl")
-KeyAdd(-10)
+            function KeyAdd(addnum) {
 
-}
+                keynum = keynum + addnum;
+                if (addnum > 0) {
+                    //alert("您已成功添加"+addnum+"把钥匙！");
+                }
+                Sxsj();
+            }
+            // 添加钥匙方法
+
+            function PTTSendClick1() {
+                if (keynum < 1) {
+                    $("#xtxx").text("抱歉，您的钥匙数量不足。");
+                    Showwd("#xttc")
+                }
+                else {
+                    var sjs = Math.ceil(Math.random() * 10000);
+                    //生成随机范围` 
+                    for(j = 0; j < gailvArr.length; j++) {
+                        var zxs=gailvnum[j][0]
+                        var zds=gailvnum[j][1]
+                        if(sjs>=zxs&&sjs<=zds)
+                        {
+                            $("#dczjxx").text(gailvArr[j][0]);
+                        }
+
+                    }
 
 
+                    Showwd("#popdc")
+                    KeyAdd(-1)
 
-        function Sxsj() {
-            $("#Keynum").text(keynum);
-
-
-
-        }
-//刷新数据方法
-function Showwd(wid){
-
-    $("#zhezhao").css("display","block");
-    $("#ycrq").css("display","block");
-    $(wid).css("display","block");
-    $(wid).addClass("cjxuanfu");
-   
-}
-// 打开弹窗方法
+                }
+            }
+            //单抽方法
 
 
-$(".dia-close").click(
-    function(){
-        $("#zhezhao").css("display","none");
-    $("#ycrq").css("display","none");
-    $(".dialog").css("display","none");
+            function PTTSendClick10() {
+                if (keynum < 10) {
+                    $("#xtxx").text("抱歉，您的钥匙数量不足。");
+                    Showwd("#xttc")
+                }
+                else {
+for (let index = 0; index < 10; index++) {
+    var sjs = Math.ceil(Math.random() * 10000);
+                    //生成随机范围` 
+                    for(var j = 0; j < gailvArr.length; j++) {
+                        var zxs=gailvnum[j][0]
+                        var zds=gailvnum[j][1]
+                        if(sjs>=zxs&&sjs<=zds)
+                        {
+                           
+                            $("#jlname"+index).text(gailvArr[j][0]);
+                        }
+
+                    }
+
+
     
-    }
-)
+}
+
+
+                    
+                    Showwd("#popJl")
+                    KeyAdd(-10)
+                }
+
+            }
+            //十连方法
+
+
+
+            function Sxsj() {
+                $("#Keynum").text(keynum);
+
+
+
+            }
+            //刷新数据方法
+            function Showwd(wid) {
+
+                $("#zhezhao").css("display", "block");
+                $("#ycrq").css("display", "block");
+                $(wid).css("display", "block");
+                $(wid).addClass("cjxuanfu");
+
+            }
+            // 打开弹窗方法
+function ChangeGailv(){
+for(i=0;i<Pgailv.length;i++)
+{
+    gailvArr[i][0]=$("#Xgname"+i).val();
+    gailvArr[i][1]=$("#Xggl"+i).val()*1;
+    
+}
+
+    SetGailv();
+    ShutWindow();
+    $("#xtxx").text("概率和名称已保存");
+    Showwd("#xttc")
+
+    
+}
+//设置概率的方法
+
+function ResetGailv(){
+gailvArr=[
+                ['QBZ03-冠军之薇皮肤', 0.15, 15],
+                ['柯尔特-冠军之特', 0.20, 12],
+                ['火麒麟-冠军之心皮肤', 0.30, 6],
+                ['毁灭-冠军之怒皮肤', 0.30, 6],
+                ['雷神-冠军之魄皮肤', 0.30, 6],
+                ['修罗-冠军之魂皮肤', 0.60, 3],
+                ['黄金猫猫手套-白鲨', 0.15, 8],
+                ['擎天-惨叫迹', 0.40, 8],
+                ['绝迹语音包兑换券', 0.15, 6],
+                ['N9语音包兑换券', 0.15, 6],
+                ['70KG语音包兑换券', 0.15, 6],
+                ['白鲨语音包兑换券', 0.15, 6],
+                ['1000经验值', 1.00, 0],
+                ['500经验值', 7.00, 0],
+                ['200经验值', 46.00, 0],
+                ['100经验值', 43.00, 0]
+            ];
+            SetGailv();
+    ShutWindow();
+    $("#xtxx").text("概率和名称已重置");
+    Showwd("#xttc")
+
+}
+//重置概率方法
+
+
+
+function ShutWindow(){
+    $("#zhezhao").css("display", "none");
+                    $("#ycrq").css("display", "none");
+                    $(".dialog").css("display", "none");
+                    $(".amsdialog_modal").css("display", "none")
+                
+}
+
+            $(".amsdialog_bconfirm").click(
+                function () {
+                    ShutWindow() })
+            $(".dia-close").click(
+                function () {
+                    ShutWindow() });
+            $(".amsdialog_close").click(
+                function () {
+                    $("#zhezhao").css("display", "none");
+                    $("#ycrq").css("display", "none");
+                    $(".dialog").css("display", "none");
+                    $(".amsdialog_modal").css("display", "none")
+                })
+                // $("#ycrq").click(
+                // function () {
+                //     $("#zhezhao").css("display", "none");
+                //     $("#ycrq").css("display", "none");
+                //     $(".dialog").css("display", "none");
+                //     $(".amsdialog_modal").css("display", "none")
+                // })
 
 
 
 
 
 
+        </script>
 
-
-    </script>
-    <script id="djc_anchor" src="static/js/index"></script>
 </body>
 
 </html>
