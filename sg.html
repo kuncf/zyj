@@ -227,7 +227,7 @@
         min-width: 400px;
         max-width: 100%;
         background-color: white;
-     
+
         font-size: 14px;
         z-index: 100008;
         display: block;
@@ -238,7 +238,8 @@
         margin-left: -361.5px;
         margin-top: -391.5px;
     }
-    .zcx table a{
+
+    .zcx table a {
         background-color: red;
     }
 </style>
@@ -858,9 +859,9 @@
                 <div class="content">
                     <h1 class="spr tit1" onclick="Showwd('#SetGailv')"></h1>
                     <div class="buy">
-                        <a class="spr btn-buy1" href="javascript:;" onclick="KeyAdd(1)" title="购买复活币"></a>
-                        <a class="spr btn-buy2" href="javascript:;" onclick="KeyAdd(11)" title="购买复活币"></a>
-                        <a class="spr btn-buy3" href="javascript:;" onclick="KeyAdd(1)" title="购买复活币"></a>
+                        <a class="spr btn-buy1" onclick="KeyAdd(1)" title="购买复活币"></a>
+                        <a class="spr btn-buy2" onclick="KeyAdd(11)" title="购买复活币"></a>
+                        <a class="spr btn-buy3" onclick="KeyAdd(1)" title="购买复活币"></a>
                         <p>我的代金券：<span class="jf_2327">0</span></p>
                     </div>
                     <div class="all-award">
@@ -911,9 +912,9 @@
                     <h1 class="spr tit2"></h1>
                     <div class="lb-head">
                         <div class="spr lb-grade">
-                            <p class="level">x</p>
+                            <p class="level" id="djt">0</p>
                         </div>
-                        <p class="value">经验值：<span class="progress_num">x</span>/100<span
+                        <p class="value">经验值：<span class="progress_num" id="jyz">0</span>/100<span
                                 style="color: red">【徽章令等级无上限】</span></p>
                         <div class="btns">
                             <a href="javascript:amsHistoryList(1);" onclick="PTTSendClick('btn','lbjl','礼包记录');"
@@ -935,53 +936,1352 @@
                             </li>
                         </ul>
                         <div class="swiper-container">
-                            <div class="swiper-wrapper" id="bp_list">
-                                <!--                            <div class="swiper-slide">-->
-                                <!--                                &lt;!&ndash;class: btnu on / btnu / btnu gray = 未解锁 / 可领取 / 已领取&ndash;&gt;-->
-                                <!--                                <ul>-->
-                                <!--                                    <li>-->
-                                <!--                                        <p>1级</p>-->
-                                <!--                                        <img src="static/picture/lb1.png">-->
-                                <!--                                        <a class="spr btnu" href="javascript:;"-->
-                                <!--                                           onclick="PTTSendClick('btn','get_btn1','未解锁')"></a>-->
-                                <!--                                    </li>-->
-                                <!--                                </ul>-->
-                                <!--                                &lt;!&ndash;class: btnd on / btnd / btnd gray = 未解锁 / 可领取 / 已领取&ndash;&gt;-->
-                                <!--                                <ul>-->
-                                <!--                                    <li>-->
-                                <!--                                        <p>1级</p>-->
-                                <!--                                        <img src="static/picture/lb21.png"/>-->
-                                <!--                                        <span>10徽章令</span>-->
-                                <!--                                        <a class="spr btnd" href="javascript:;"-->
-                                <!--                                           onclick="PTTSendClick('btn','get_btn1','未解锁')"></a>-->
-                                <!--                                    </li>-->
-                                <!--                                </ul>-->
-                                <!--                            </div>-->
-                                <!--                            <div class="swiper-slide">-->
-                                <!--                                &lt;!&ndash;class: btnu on / btnu / btnu gray = 未解锁 / 可领取 / 已领取&ndash;&gt;-->
-                                <!--                                <ul>-->
-                                <!--                                    <li>-->
-                                <!--                                        <p>2级</p>-->
-                                <!--                                        <img src="static/picture/lb2.png">-->
-                                <!--                                        <a class="spr btnu gray" href="javascript:;"-->
-                                <!--                                           onclick="PTTSendClick('btn','get_btn1','未解锁')"></a>-->
-                                <!--                                    </li>-->
-                                <!--                                </ul>-->
-                                <!--                                &lt;!&ndash;class: btnd on / btnd / btnd gray = 未解锁 / 可领取 / 已领取&ndash;&gt;-->
-                                <!--                                <ul>-->
-                                <!--                                    <li>-->
-                                <!--                                        <p>2级</p>-->
-                                <!--                                        <img src="static/picture/lb21.png"/>-->
-                                <!--                                        <span>10徽章令</span>-->
-                                <!--                                        <a class="spr btnd gray" href="javascript:;"-->
-                                <!--                                           onclick="PTTSendClick('btn','get_btn1','未解锁')"></a>-->
-                                <!--                                    </li>-->
-                                <!--                                </ul>-->
-                                <!--                            </div>-->
+                            <div class="swiper-wrapper" id="bp_list"
+                                style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                <div class="swiper-slide swiper-slide-active" order="1" bp_lv="1" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>1级</p>
+                                            <img src="static/images/lb1.png">
+                                            <a href="javascript:get_free_award(1,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>1级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>50徽章令</span>
+                                            <a href="javascript:get_cost_award(1,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide swiper-slide-next" order="2" bp_lv="2" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>2级</p>
+                                            <img src="static/images/lb2.png">
+                                            <a href="javascript:get_free_award(2,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>2级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(2,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="3" bp_lv="3" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>3级</p>
+                                            <img src="static/images/lb3.png">
+                                            <a href="javascript:get_free_award(3,1);" class="spr btnu  on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>3级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(3,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="4" bp_lv="4" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>4级</p>
+                                            <img src="static/images/lb4.png">
+                                            <a href="javascript:get_free_award(4,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>4级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(4,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="5" bp_lv="5" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>5级</p>
+                                            <img src="static/images/lb5.png">
+                                            <a href="javascript:get_free_award(5,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>5级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(5,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="6" bp_lv="6" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>6级</p>
+                                            <img src="static/images/lb6.png">
+                                            <a href="javascript:get_free_award(6,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>6级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(6,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="7" bp_lv="7" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>7级</p>
+                                            <img src="static/images/lb7.png">
+                                            <a href="javascript:get_free_award(7,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>7级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(7,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="8" bp_lv="8" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>8级</p>
+                                            <img src="static/images/lb8.png">
+                                            <a href="javascript:get_free_award(8,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>8级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(8,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="9" bp_lv="9" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>9级</p>
+                                            <img src="static/images/lb9.png">
+                                            <a href="javascript:get_free_award(9,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>9级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(9,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="10" bp_lv="10" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>10级</p>
+                                            <img src="static/images/lb10.png">
+                                            <a href="javascript:get_free_award(10,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>10级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(10,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="11" bp_lv="11" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>11级</p>
+                                            <img src="static/images/lb11.png">
+                                            <a href="javascript:get_free_award(11,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>11级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(11,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="12" bp_lv="12" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>12级</p>
+                                            <img src="static/images/lb12.png">
+                                            <a href="javascript:get_free_award(12,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>12级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(12,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="13" bp_lv="13" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>13级</p>
+                                            <img src="static/images/lb13.png">
+                                            <a href="javascript:get_free_award(13,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>13级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(13,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="14" bp_lv="14" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>14级</p>
+                                            <img src="static/images/lb14.png">
+                                            <a href="javascript:get_free_award(14,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>14级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(14,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="15" bp_lv="15" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>15级</p>
+                                            <img src="static/images/lb15.png">
+                                            <a href="javascript:get_free_award(15,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>15级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(15,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="16" bp_lv="16" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>16级</p>
+                                            <img src="static/images/lb16.png">
+                                            <a href="javascript:get_free_award(16,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>16级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(16,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="17" bp_lv="17" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>17级</p>
+                                            <img src="static/images/lb17.png">
+                                            <a href="javascript:get_free_award(17,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>17级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(17,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="18" bp_lv="18" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>18级</p>
+                                            <img src="static/images/lb18.png">
+                                            <a href="javascript:get_free_award(18,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>18级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(18,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="19" bp_lv="19" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>19级</p>
+                                            <img src="static/images/lb19.png">
+                                            <a href="javascript:get_free_award(19,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>19级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(19,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="20" bp_lv="20" style="width: 109px;">
+                                    <ul>
+                                        <li class="bp_list1">
+                                            <p>20级</p>
+                                            <img src="static/images/lb20.png">
+                                            <a href="javascript:get_free_award(20,1);" class="spr btnu on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>20级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(20,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="21" bp_lv="21" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>21级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(21,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="22" bp_lv="22" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>22级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(22,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="23" bp_lv="23" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>23级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(23,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="24" bp_lv="24" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>24级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(24,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="25" bp_lv="25" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>25级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(25,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="26" bp_lv="26" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>26级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(26,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="27" bp_lv="27" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>27级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(27,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="28" bp_lv="28" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>28级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(28,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="29" bp_lv="29" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>29级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(29,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="30" bp_lv="30" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>30级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(30,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="31" bp_lv="31" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>31级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(31,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="32" bp_lv="32" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>32级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(32,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="33" bp_lv="33" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>33级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(33,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="34" bp_lv="34" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>34级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(34,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="35" bp_lv="35" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>35级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(35,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="36" bp_lv="36" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>36级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(36,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="37" bp_lv="37" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>37级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(37,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="38" bp_lv="38" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>38级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(38,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="39" bp_lv="39" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>39级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(39,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="40" bp_lv="40" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>40级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(40,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="41" bp_lv="41" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>41级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(41,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="42" bp_lv="42" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>42级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(42,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="43" bp_lv="43" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>43级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(43,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="44" bp_lv="44" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>44级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(44,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="45" bp_lv="45" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>45级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(45,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="46" bp_lv="46" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>46级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(46,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="47" bp_lv="47" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>47级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(47,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="48" bp_lv="48" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>48级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(48,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="49" bp_lv="49" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>49级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(49,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="50" bp_lv="50" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>50级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(50,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="51" bp_lv="51" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>51级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(51,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="52" bp_lv="52" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>52级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(52,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="53" bp_lv="53" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>53级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(53,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="54" bp_lv="54" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>54级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(54,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="55" bp_lv="55" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>55级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(55,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="56" bp_lv="56" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>56级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(56,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="57" bp_lv="57" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>57级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(57,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="58" bp_lv="58" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>58级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(58,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="59" bp_lv="59" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>59级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(59,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="60" bp_lv="60" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>60级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(60,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="61" bp_lv="61" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>61级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(61,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="62" bp_lv="62" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>62级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(62,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="63" bp_lv="63" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>63级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(63,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="64" bp_lv="64" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>64级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(64,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="65" bp_lv="65" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>65级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(65,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="66" bp_lv="66" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>66级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(66,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="67" bp_lv="67" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>67级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(67,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="68" bp_lv="68" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>68级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(68,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="69" bp_lv="69" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>69级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(69,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="70" bp_lv="70" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>70级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(70,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="71" bp_lv="71" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>71级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(71,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="72" bp_lv="72" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>72级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(72,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="73" bp_lv="73" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>73级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(73,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="74" bp_lv="74" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>74级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(74,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="75" bp_lv="75" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>75级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(75,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="76" bp_lv="76" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>76级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(76,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="77" bp_lv="77" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>77级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(77,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="78" bp_lv="78" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>78级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(78,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="79" bp_lv="79" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>79级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(79,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="80" bp_lv="80" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>80级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(80,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="81" bp_lv="81" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>81级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(81,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="82" bp_lv="82" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>82级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(82,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="83" bp_lv="83" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>83级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(83,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="84" bp_lv="84" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>84级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(84,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="85" bp_lv="85" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>85级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(85,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="86" bp_lv="86" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>86级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(86,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="87" bp_lv="87" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>87级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(87,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="88" bp_lv="88" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>88级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(88,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="89" bp_lv="89" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>89级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(89,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="90" bp_lv="90" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>90级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(90,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="91" bp_lv="91" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>91级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(91,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="92" bp_lv="92" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>92级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(92,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="93" bp_lv="93" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>93级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(93,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="94" bp_lv="94" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>94级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(94,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="95" bp_lv="95" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>95级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(95,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="96" bp_lv="96" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>96级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(96,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="97" bp_lv="97" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>97级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(97,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="98" bp_lv="98" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>98级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(98,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="99" bp_lv="99" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>99级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>10徽章令</span>
+                                            <a href="javascript:get_cost_award(99,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide" order="100" bp_lv="100" style="width: 109px;">
+                                    <ul class="badge_list"></ul>
+                                    <ul>
+                                        <li class="bp_list2">
+                                            <p>100级</p>
+                                            <img src="static/images/lb21.png">
+                                            <span>20徽章令</span>
+                                            <a href="javascript:get_cost_award(100,1);" class="spr btnd on"
+                                                onclick="PTTSendClick('btn','get_btn3','点击领取')"></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="swiper-button-prev spr lb-prev"></div>
-                        <div class="swiper-button-next spr lb-next"></div>
+                        <div class="swiper-button-prev spr lb-prev" onclick="fanye(0)"></div>
+                        <div class="swiper-button-next spr lb-next" onclick="fanye(1)"></div>
                     </div>
                     <div class="lb-btn">
                         <a class="spr lb-btn1" href="javascript:amsBuyLock();"
@@ -996,21 +2296,21 @@
                                 <span class="txt1">当日游戏一局</span>
                                 <p class="txt2">20经验值</p>
                                 <!--class: gray/已领取-->
-                                <a class="spr btn-receive1 task task1" href="javascript:amsTask(1);"
+                                <a class="spr btn-receive1 task task1" onclick="Lqjyzz(0)" id="lqjyzbtn0" href="javascript:amsTask(1);"
                                     onclick="PTTSendClick('btn','btn-get-task1','领取任务奖励1')" title="领取"></a>
                             </li>
                             <li>
                                 <span class="txt1">每日参与预言</span>
                                 <p class="txt2">10经验值</p>
                                 <!--class: gray/已领取-->
-                                <a class="spr btn-receive1 task task3" href="javascript:amsTask(3);"
+                                <a class="spr btn-receive1 task task3"  onclick="Lqjyzz(1)" id="lqjyzbtn1"  href="javascript:amsTask(3);"
                                     onclick="PTTSendClick('btn','btn-get-task2','领取任务奖励2')" title="领取"></a>
                             </li>
                             <li>
                                 <span class="txt1">虎牙app的CFPL直播间观赛5分钟</span>
                                 <p class="txt2">30经验值（房间号：660101）</p>
                                 <!--class: gray/已领取-->
-                                <a class="spr btn-receive1 task task2" href="javascript:amsTask(2);"
+                                <a class="spr btn-receive1 task task2" href="javascript:amsTask(2);"  onclick="Lqjyzz(2)" id="lqjyzbtn2" 
                                     onclick="PTTSendClick('btn','btn-get-task2','领取任务奖励2')" title="领取"></a>
                                 <a class="spr btn-to" href="javascript:jumpHuya()"
                                     onclick="PTTSendClick('btn','btn-ljqw1','立即前往1')" title="立即前往"></a>
@@ -1046,52 +2346,52 @@
             <div class="part3">
                 <div class="content">
                     <h1 class="spr tit3"></h1>
-                    <p class="part3-num">我的徽章令：<span class="jf_3782">x</span>【<span>单Q单大区兑换限1</span>】</p>
+                    <p class="part3-num">我的徽章令：<span class="jf_3782">0</span>【<span>单Q单大区兑换限1</span>】</p>
                     <div class="part3-pop">
                         <!--class: gray = 已兑换-->
                         <ul class="ul-list">
                             <li>
-                                <a class="spr btn-dex1 hzldh hzldh1" href="javascript:amsExchange(1);"
+                                <a class="spr btn-dex1 hzldh hzldh1" href="javascript:amsExchange(1);" id="dhbtn1"
                                     onclick="PTTSendClick('btn','hzldh1','徽章令兑换1');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex1 hzldh hzldh2" href="javascript:amsExchange(2);"
+                                <a class="spr btn-dex1 hzldh hzldh2" href="javascript:amsExchange(2);" id="dhbtn2"
                                     onclick="PTTSendClick('btn','hzldh2','徽章令兑换2');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex2 hzldh hzldh3" href="javascript:amsExchange(3);"
+                                <a class="spr btn-dex2 hzldh hzldh3" href="javascript:amsExchange(3);" id="dhbtn3"
                                     onclick="PTTSendClick('btn','hzldh3','徽章令兑换3');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex3 hzldh hzldh4" href="javascript:amsExchange(4);"
+                                <a class="spr btn-dex3 hzldh hzldh4" href="javascript:amsExchange(4);" id="dhbtn4"
                                     onclick="PTTSendClick('btn','hzldh4','徽章令兑换4');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex3 hzldh hzldh5" href="javascript:amsExchange(5);"
+                                <a class="spr btn-dex3 hzldh hzldh5" href="javascript:amsExchange(5);" id="dhbtn5"
                                     onclick="PTTSendClick('btn','hzldh5','徽章令兑换5');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex3 hzldh hzldh6" href="javascript:amsExchange(6);"
+                                <a class="spr btn-dex3 hzldh hzldh6" href="javascript:amsExchange(6);" id="dhbtn6"
                                     onclick="PTTSendClick('btn','hzldh6','徽章令兑换6');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex4 hzldh hzldh7" href="javascript:amsExchange(7);"
+                                <a class="spr btn-dex4 hzldh hzldh7" href="javascript:amsExchange(7);" id="dhbtn7"
                                     onclick="PTTSendClick('btn','hzldh7','徽章令兑换7');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex5 hzldh hzldh8" href="javascript:amsExchange(8);"
+                                <a class="spr btn-dex5 hzldh hzldh8" href="javascript:amsExchange(8);" id="dhbtn8"
                                     onclick="PTTSendClick('btn','hzldh8','徽章令兑换8');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex5 hzldh hzldh9" href="javascript:amsExchange(9);"
+                                <a class="spr btn-dex5 hzldh hzldh9" href="javascript:amsExchange(9);" id="dhbtn9"
                                     onclick="PTTSendClick('btn','hzldh9','徽章令兑换9');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex5 hzldh hzldhselect4" href="javascript:TGDialogS('dia-yyb');"
+                                <a class="spr btn-dex5 hzldh hzldhselect4" href="javascript:TGDialogS('dia-yyb');"  id="dhbtn10"
                                     onclick="PTTSendClick('btn','hzldh10','徽章令兑换10');" title="兑换"></a>
                             </li>
                             <li>
-                                <a class="spr btn-dex6 hzldh hzldh14" href="javascript:amsExchange(14);"
+                                <a class="spr btn-dex6 hzldh hzldh14" href="javascript:amsExchange(11);"  id="dhbtn11"
                                     onclick="PTTSendClick('btn','hzldh11','徽章令兑换11');" title="兑换"></a>
                             </li>
                         </ul>
@@ -1103,33 +2403,33 @@
                     <h1 class="spr tit4"></h1>
                     <p class="pop-info">
                         本活动中通过抽奖获得一定次数的冠军系列道具可直接领取相应福利（单q单大区限领取1次），累计次数不包含福利获得和兑换的部分。<span>【抽中冠军系列道具累计次数：<span
-                                class="chou_sum">x</span>】</span></p>
+                                class="chou_sum" id="gjzjcs">0</span>】</span></p>
                     <div class="part4-pop">
                         <ul class="ul-list">
                             <!--class: gray = 已领取-->
                             <li>
-                                <a class="spr btn-receive2 ljdh ljdh1" href="javascript:amsLqSum(1);"
-                                    onclick="PTTSendClick('btn','receive1','立即领取1');" title="立即领取"></a>
+                                <a class="spr btn-receive2 ljdh ljdh1" id="csdhbtn0" onclick="Zjcsdh(0)"
+                                    title="立即领取"></a>
                             </li>
                             <li>
-                                <a class="spr btn-receive2 ljdh ljdh2" href="javascript:amsLqSum(2);"
-                                    onclick="PTTSendClick('btn','receive2','立即领取2');" title="立即领取"></a>
+                                <a class="spr btn-receive2 ljdh ljdh2" id="csdhbtn1" onclick="Zjcsdh(01)"
+                                    title="立即领取"></a>
                             </li>
                             <li>
-                                <a class="spr btn-receive2 ljdh ljdh3" href="javascript:amsLqSum(3);"
-                                    onclick="PTTSendClick('btn','receive3','立即领取3');" title="立即领取"></a>
+                                <a class="spr btn-receive2 ljdh ljdh3" id="csdhbtn2" onclick="Zjcsdh(02)"
+                                    title="立即领取"></a>
                             </li>
                             <li>
-                                <a class="spr btn-receive2 ljdh ljdh4" href="javascript:amsLqSum(4);"
-                                    onclick="PTTSendClick('btn','receive4','立即领取4');" title="立即领取"></a>
+                                <a class="spr btn-receive2 ljdh ljdh4" id="csdhbtn3" onclick="Zjcsdh(03)"
+                                    title="立即领取"></a>
                             </li>
                             <li>
-                                <a class="spr btn-receive2 ljdhselect10" href="javascript:TGDialogS('dia-bb');"
-                                    onclick="PTTSendClick('btn','receive5','立即领取5');" title="立即领取"></a>
+                                <a class="spr btn-receive2 ljdhselect10" id="csdhbtn4" onclick="Zjcsdh(04)"
+                                    title="立即领取"></a>
                             </li>
                             <li>
-                                <a class="spr btn-receive2 ljdh ljdh5" href="javascript:amsLqSum(5);"
-                                    onclick="PTTSendClick('btn','receive6','立即领取6');" title="立即领取"></a>
+                                <a class="spr btn-receive2 ljdh ljdh5" id="csdhbtn5" onclick="Zjcsdh(05)"
+                                    title="立即领取"></a>
                             </li>
                         </ul>
                     </div>
@@ -1260,11 +2560,11 @@
             var keynum = 0;
             //定义钥匙数量
             const Pgailv = [
-                ['QBZ03-冠军之薇皮肤', 10, 15],
-                ['柯尔特-冠军之特', 10, 12],
-                ['火麒麟-冠军之心皮肤', 10, 6],
-                ['毁灭-冠军之怒皮肤', 10, 6],
-                ['雷神-冠军之魄皮肤', 10, 6],
+                ['QBZ03-冠军之薇皮肤', 0.15, 15],
+                ['柯尔特-冠军之特', 0.20, 12],
+                ['火麒麟-冠军之心皮肤', 0.3, 6],
+                ['毁灭-冠军之怒皮肤', 0.3, 6],
+                ['雷神-冠军之魄皮肤', 0.3, 6],
                 ['修罗-冠军之魂皮肤', 0.60, 3],
                 ['黄金猫猫手套-白鲨', 0.15, 8],
                 ['擎天-惨叫迹', 0.40, 8],
@@ -1287,11 +2587,21 @@
             //定义中奖信息数组
             var zcxxz = [];
             //定义暂存箱数组
+            var hzlnum = 0;
+            //定义徽章令数量
+            var gjzjcs = 0;
+            //定义冠军道具中奖次数
+            var jyz = 0;
+            //定义经验值
+
+
             SetGailv();
             var empsz = [0, 0];
             //定义空概率范围数组
             function SetGailv() {
                 for (i = 0; i < gailvArr.length; i++) {
+                    $("#Xgname" + i).val(gailvArr[i][0]);
+                    $("#Xggl" + i).val(gailvArr[i][1]);
                     if (i == 0) {
                         empsz = [1, gailvArr[0][1] * 100];
                         gailvnum[i] = empsz;
@@ -1301,6 +2611,7 @@
                         gailvnum[i] = empsz;
                     }
                 }
+
             }
             //设置概率方法
 
@@ -1329,11 +2640,27 @@
                         if (sjs >= zxs && sjs <= zds) {
                             $("#dczjxx").text(gailvArr[j][0]);
                             SetjlZcx(j);
+                            if (j <= 5) {
+                                gjzjcs++;
+                                $("#gjzjcs").text(gjzjcs);
+                            }
+                            if (j == 12) {
+                                jyz = jyz + 1000;
+                            }
+                            if (j == 13) {
+                                jyz = jyz + 500;
+                            }
+                            if (j == 14) {
+                                jyz = jyz + 200;
+                            }
+                            if (j == 15) {
+                                jyz = jyz + 100;
+                            }
                         }
 
                     }
 
-
+                    Sxjyz();
                     Showwd("#popdc")
                     KeyAdd(-1)
 
@@ -1357,6 +2684,22 @@
                             if (sjs >= zxs && sjs <= zds) {
                                 SetjlZcx(j);
                                 $("#jlname" + index).text(gailvArr[j][0]);
+                                if (j <= 5) {
+                                    gjzjcs++;
+                                    $("#gjzjcs").text(gjzjcs);
+                                }
+                                if (j == 12) {
+                                    jyz = jyz + 1000;
+                                }
+                                if (j == 13) {
+                                    jyz = jyz + 500;
+                                }
+                                if (j == 14) {
+                                    jyz = jyz + 200;
+                                }
+                                if (j == 15) {
+                                    jyz = jyz + 100;
+                                }
                             }
 
                         }
@@ -1368,13 +2711,52 @@
 
 
                     Showwd("#popJl")
-                    KeyAdd(-10)
+                    KeyAdd(-10);
+                    Sxjyz();
                 }
 
             }
             //十连方法
 
-
+            var hzldh=[
+                ["Knife-冠军之刃",4800,true],
+                ["QBZ03-冠军之薇皮肤",4800,true],
+                ["柯尔特-冠军之特",3600,true],
+                ["火麒麟-冠军之心皮肤",2000,true],
+                ["毁灭-冠军之怒皮肤",2000,true],
+                ["雷神-冠军之魄皮肤",2000,true],
+                ["修罗-冠军之魂皮肤",1200,true],
+                ["黄金猫猫手套-白鲨",2400,true],
+                ["擎天-惨叫迹",2400,true],
+                ["选手语音包兑换券四选一",2400,true],
+                ["职业选手",900,true],]
+               // hzlnum=9000;
+function amsExchange(pid){
+   var sb=pid-1;
+    if(hzlnum>=hzldh[sb][1]&&hzldh[sb][2])
+    {
+        $("#dhbtn"+pid).addClass("gray");
+        let time = new Date()
+                    ksz[0] =
+                    ksz[1] = "广东电信一区";
+                    ksz[2] = hzldh[sb][0];
+                    zjjlt.push(ksz);
+                    $("#zjjltb").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
+                    hzlnum=hzlnum-hzldh[sb][1];
+                    $(".jf_3782").text(hzlnum);
+                    hzldh[sb][2]=false;
+                    $("#xtxx").text("恭喜获得礼包：" + ksz[2]);
+                    Showwd("#xttc");
+    }
+else if(hzlnum<hzldh[sb][1]&&hzldh[sb][2]){
+    
+    $("#xtxx").text("您的徽章令不够。");
+                    Showwd("#xttc");
+}
+                    
+    
+}
+//徽章兑换方法
 
             function Sxsj() {
                 $("#Keynum").text(keynum);
@@ -1383,6 +2765,33 @@
 
             }
             //刷新数据方法
+
+            var sjsz = [];
+            var levelnum = 0;
+            //定义等级
+            function Sxjyz() {
+                for (let index = 0; index < 300; index++) {
+                    for (let index2 = 0; index2 < 9; index2++) {
+                        sjsz.push([10, true])
+
+                    }
+                    sjsz.push([20, true])
+                    sjsz[0][0] = 50;
+                }
+var djcome=jyz+"";
+var sbjyz=djcome.substring(djcome.length-2,djcome.length);
+                $("#jyz").text(sbjyz);
+                $(".jdt.progress_width").css("transition-duration", "1s");
+              $(".jdt.progress_width").css("width",sbjyz+"%");
+                $("#djt").text(Math.trunc(jyz / 100));
+                levelnum = Math.trunc(jyz / 100);
+for (let index = 0; index < levelnum; index++) {
+    $(".bp_list2").eq(index).children("a").removeClass("on");
+    $(".bp_list1").eq(index).children("a").removeClass("on");
+}
+            }
+            Sxjyz();
+            //刷新经验值和徽章令的方法
             function Showwd(wid) {
 
                 $("#zhezhao").css("display", "block");
@@ -1427,6 +2836,7 @@
                     ['200经验值', 46.00, 0],
                     ['100经验值', 43.00, 0]
                 ];
+
                 SetGailv();
                 ShutWindow();
                 $("#xtxx").text("概率和名称已重置");
@@ -1469,17 +2879,107 @@
                 ShutWindow();
                 $("#xtxx").text("恭喜获得礼包：分解钥匙*" + kn);
                 Showwd("#xttc")
-zcxbcdk=true;
-$("#zcxid"+zcxid).children().css("color","grey")
-$("#fckid"+zcxid).before("发送仓库")
-$("#fckid"+zcxid).remove();
-$("#fjbtnid"+zcxid).before("已分解")
-$("#fjbtnid"+zcxid).remove();
+                zcxbcdk = true;
+                $("#zcxid" + zcxid).children().css("color", "grey")
+                $("#fckid" + zcxid).before("发送仓库")
+                $("#fckid" + zcxid).remove();
+                $("#fjbtnid" + zcxid).before("已分解")
+                $("#fjbtnid" + zcxid).remove();
 
 
 
             }
+            //分解钥匙方法
 
+
+
+            var dqfanye = 0;
+            function fanye(czid) {
+                if (czid == 0) {
+                    if (dqfanye < 0) {
+                        dqfanye = dqfanye + 545;
+
+                        $("#bp_list").css("transition-duration", "0.5s");
+                        $("#bp_list").css("transform", "translate3d(" + dqfanye + "px, 0px, 0px)");
+                    }
+                }
+                if (czid == 1) {
+                    if (dqfanye > -9810) {
+                        dqfanye = dqfanye - 545;
+
+                        $("#bp_list").css("transition-duration", "0.5s");
+                        $("#bp_list").css("transform", "translate3d(" + dqfanye + "px, 0px, 0px)");
+                    }
+                }
+            }
+            //翻页方法
+
+
+            function get_cost_award(djid, bzd) {
+                // alert(djid-1);
+                // $(".bp_list2").eq(djid-1).children("a").
+                if (levelnum >= djid&&sjsz[djid-1][1]) {
+
+
+                    $(".bp_list2").eq(djid - 1).children("a").addClass("gray");
+                    $(".bp_list2").eq(djid - 1).children("a").removeClass("on");
+                    hzlnum=hzlnum+sjsz[djid-1][0];
+                    sjsz[djid-1][1]=false;
+                    let time = new Date()
+                    ksz[0] =
+                    ksz[1] = "广东电信一区";
+                    ksz[2] = sjsz[djid-1][0]+"徽章令";
+                    zjjlt.push(ksz);
+                    $("#zjjltb").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
+                    
+                    $(".jf_3782").text(hzlnum);
+                    $("#xtxx").text("恭喜获得礼包：" + sjsz[djid-1][0]+"徽章令");
+                    Showwd("#xttc")
+                }
+                //alert(sjsz[djid-1]);
+            }
+            //领取徽章令方法
+
+            var ljqsz=[
+            ["M4A1-CFS(90天)",true], ["AK-47-CFS(90天)",true], ["AUG A1-CFS(90天)",true], ["SG552-CFS(90天)",true], ["AWM-CFS(90天)",true],
+            ["MP5-CFS(90天)",true], ["P90-CFS(90天)",true], ["XM1014-CFS(90天)",true], ["M60-CFS(90天)",true], ["Colt1911-CFS(90天)",true],
+            ["Desert Eagle-CFS(90天)",true], ["Knife-CFS(90天)",true], ["B.C-Axe-CFS(90天)",true], ["GRENADE-CFS(90天)",true], ["FLASHBANG-CFS(90天)",true],
+            ["SMOKE-CFS(90天)",true], ["轻型军用手斧-镜(30天)",true], ["超级对讲机(30天)",true], ["烟雾弹-CFS2017纪念版",true], ["击中动画特效-绝迹(30天)",true]
+            ];
+           function get_free_award(djid,bzd){
+            if (levelnum >= djid&&ljqsz[djid-1][1]) {
+
+
+ $(".bp_list1").eq(djid - 1).children("a").addClass("gray");
+ $(".bp_list1").eq(djid - 1).children("a").removeClass("on");
+                    let time = new Date()
+                    ksz[0] =
+                    ksz[1] = "广东电信一区";
+                    ksz[2] = ljqsz[djid-1][0];
+                    zjjlt.push(ksz);
+                    $("#zjjltb").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
+                    
+ljqsz[djid-1][1]=false;
+$("#xtxx").text("恭喜获得礼包：" + ljqsz[djid-1][0]);
+Showwd("#xttc")
+}
+           }
+           //领取垃圾枪方法
+
+           var yjlq=0;
+           function getPropByBatch(){
+for(i=0;i<levelnum;i++)
+{
+    get_cost_award(i+1, 1);
+    if(i<20)
+    {
+        get_free_award(i+1, 1);
+    }
+   
+}
+$("#xtxx").text("一键领取完毕");
+           }
+           //一件领取方法
 
             function ShutWindow() {
                 $("#zhezhao").css("display", "none");
@@ -1509,19 +3009,62 @@ $("#fjbtnid"+zcxid).remove();
                         zcxbcdk = false;
                     }
                 })
-                // $("#ycrq").click(
-                // function () {
-                //     $("#zhezhao").css("display", "none");
-                //     $("#ycrq").css("display", "none");
-                //     $(".dialog").css("display", "none");
-                //     $(".amsdialog_modal").css("display", "none")
-                // })
+            // $("#ycrq").click(
+            // function () {
+            //     $("#zhezhao").css("display", "none");
+            //     $("#ycrq").css("display", "none");
+            //     $(".dialog").css("display", "none");
+            //     $(".amsdialog_modal").css("display", "none")
+            // })
+            var zjcsdhsz = [
+                ["幻神-冠军之幻(皮肤)兑换券", 18, true],
+                ["黑龙-冠军之武(皮肤)兑换券", 12, true],
+                ["Knife-冠军之刃", 6, true],
+                ["黑骑士-冠军(皮肤)兑换券", 3, true],
+                ["炫彩背包", 2, true],
+                ["CFS纪念版人偶兑换券", 1, true]
+            ]
 
 
 
+            function Zjcsdh(pid) {
+                if (zjcs >= zjcsdhsz[pid][1] && zjcsdhsz[pid][2]) {
+                    let time = new Date()
+                    ksz[0] =
+                        ksz[1] = "广东电信一区";
+                    ksz[2] = zjcsdhsz[pid][0];
+                    zjjlt.push(ksz);
+                    $("#zjjltb").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
+                    ShutWindow();
+                    $("#xtxx").text("恭喜获得礼包：" + ksz[2]);
+                    Showwd("#xttc")
+                    zjcsdhsz[pid][2] = false;
+                    $("#csdhbtn" + pid).addClass("gray");
 
-
-
+                }
+                else {
+                    ShutWindow();
+                    $("#xtxx").text("对不起，您的冠军道具中奖次数不够或者您已领取过该道具。");
+                    Showwd("#xttc")
+                }
+            }
+//中奖次数兑换方法
+var lqjyzsz=[[20,true],[10,true],[30,true]];
+function Lqjyzz(bid)
+{
+    
+    if(lqjyzsz[bid][1])
+    {
+        $("#lqjyzbtn"+bid).addClass("gray");
+        jyz=jyz+lqjyzsz[bid][0];
+        Sxjyz();
+        lqjyzsz[bid][1]=false;
+        $("#xtxx").text("恭喜获得礼包：" + lqjyzsz[bid][0]+"经验值");
+        
+       Showwd("#xttc");
+    }
+  
+}
         </script>
 
 </body>
