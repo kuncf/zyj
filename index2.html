@@ -242,6 +242,9 @@
     .zcx table a {
         background-color: red;
     }
+    .ggtc{
+       
+    }
 </style>
 
 <head>
@@ -255,16 +258,33 @@
 
     <link href="static/css/swiper-3.4.2.min.css" rel="stylesheet">
     <link href="static/css/index.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="static/mdui/css/mdui.css"/>
+    <script src="static/mdui/js/mdui.js"></script>
 </head>
 
-<body>
+<body class="mdui-theme-layout-dark mdui-theme-accent-red">
     <!--<script></script>-->
 
 
 
-
-
+    <div class="mdui-dialog " id="dialog">
+        <div class="mdui-dialog-content">
+          <div class="mdui-dialog-title">广告标题</div>
+         
+        在此处键入内容1....  <br>
+        在此处键入内容2.... <br>
+        在此处键入内容3.... <br>
+        在此处键入内容4.... <br>
+        在此处键入内容5....<br>
+        <!-- <img src="static/images/gg1.png" alt="" style="width:100%;"> -->
+        <!-- 广告图片 -->
+        </div>
+        <div class="mdui-dialog-actions">
+          <button class="mdui-btn mdui-ripple" mdui-dialog-close>不用了，谢谢</button>
+          <a href="https://mo-liang.taobao.com/" ><button class="mdui-btn mdui-ripple" mdui-dialog-confirm>去看看</button></a> 
+        </div>
+      </div>
+    <!-- 广告弹窗部分 -->
 
 
 
@@ -428,8 +448,8 @@
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                             <tr>
-                                <th style="width: 40%;">名称</th>
-                                <th style="width: 30%;">领取道具</th>
+                                <th style="width: 70%;">名称</th>
+                                
                                 <th style="width: 30%;">分解为钥匙</th>
                             </tr>
                         </thead>
@@ -656,22 +676,16 @@
 
 
     <div class="ost_box" style="text-align: center;height: 60px;">
-       <a href="https://mo-liang.taobao.com/" target="_blank"><img src="static/images/gg1.png"   style="height:60px;" salt=""></a>
-    </div>
+        <a href="https://mo-liang.taobao.com/" target="_blank"><img src="static/images/gg1.png"   style="height:60px;" salt=""></a>
+     </div>
     <div class="wrapper">
         <!--    section start-->
         <div class="head-box">
-            <div class="logo-box">
-                <a class="logo-spr logo1" href="https://cf.qq.com/main.shtml"
-                    onclick="PTTSendClick('btn','logo1','logocf');" target="_blank"></a>
-                <a class="logo-spr logo2" href="https://cf.qq.com/cp/a20230118cfpl/index.html"
-                    onclick="PTTSendClick('btn','logo2','logocfpl');" target="_blank"></a>
-                <a class="logo-spr logo3" href="https://daoju.qq.com/mall/"
-                    onclick="PTTSendClick('btn','logo4','logo道聚城');" target="_blank"></a>
-            </div>
+        
             <div class="content">
                 <div class="login-box">
-                  
+                    <a href="javascript: Showwd('#zjjlbox')">[礼包记录]</a>
+                            <a href="javascript: Showwd('#dia-glb')">[奖池概率]</a>
                 </div>
             </div>
         </div>
@@ -2256,114 +2270,15 @@
                     </div>
                 </div>
             </div>
-            <div class="part5" style="display:none ;">
-                <div class="content">
-                    <h1 class="spr tit5"></h1>
-                    <div class="inline">
-                        <iframe id="djbp_jc" src="//act.daoju.qq.com/act/a20200428djbp/index_jc.html"></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="part6" style="display:none ;">
-                <div class="content">
-                    <h1 class="spr tit6"></h1>
-                    <ul class="ul-list">
-                        <li>
-                            <em class="spr item-ico">1</em>
-                            <p>2023.2.10 00:00-2023.4.30 23:59；</p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">2</em>
-                            <p>
-                                购买：10Q币购买复活币1个可获得1个钥匙，100Q币购买复活币10个可获得11个钥匙，仅限掌上道聚城购买可额外获得1个钥匙，单Q限1次；拥有代金券的玩家，可以使用代金券抵扣购买复活币并赠送钥匙，一次最多抵扣9个代金券，一旦代金券使用后无法退还（下单后未支付，订单被系统取消之后或手动取消之后会返还抵扣的代金券）；若玩家账号被封号则不允许进行充值行为，请玩家在解除封号后进行充值；
-                            </p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">3</em>
-                            <p>
-                                抽奖：消耗钥匙进行单抽和十连抽，抽奖获得的可分解道具存放在【暂存箱】中，可选择分解成钥匙或发往游戏仓库，已经领取到仓库的道具无法退换，请慎重（在参与活动期间请确认好绑定的大区）；唯一性道具和角色（如：职业选手等），可重复抽到，但在同一大区内，游戏仓库无法重复到账；
-                            </p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">4</em>
-                            <p>冠军累计福利：本活动中通过抽奖获得一定次数的冠军系列道具（QBZ03-冠军之薇皮肤，柯尔特-冠军之特，火麒麟-冠军之心皮肤，毁灭-冠军之怒皮肤，雷神-冠军之魄皮肤
-                                修罗-冠军之魂皮肤）可直接领取相应福利，累计次数不包含福利获得和兑换的部分，活动期间单q单大区限领取1次；</p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">5</em>
-                            <p>通行证：分为免费线和付费线，玩家初始为0级，花费9元即可解锁付费线，解锁可获得1把本活动抽奖钥匙。通过经验值的累计可以增加等级，每获得100经验值升一级，经验值可以通过完成任务获得，也可通过参加其他运营活动获得经验值，通行证每升一级均可以获得对应的奖励，分为付费线和免费线两种奖励；通行证等级不设上限，1000级可领取雷神-R.LGD-CFPLS18冠军兑换券，1000级后每级可获得20徽章令，免费线在20级后无奖励；
-                            </p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">6</em>
-                            <p>徽章令兑换：玩家可以消耗获得的徽章令进行道具兑换，兑换获得的道具直接发往游戏仓库，兑换单Q单大区限1；</p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">7</em>
-                            <p>超过活动期限的钥匙、经验值、徽章令、累计抽到冠军系列道具次数都将作废，请及时使用。活动使用的通用代金券不会作废，可以用于后续的其他活动；</p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">8</em>
-                            <p><a href="javascript:TGDialogS('dia-glb');"
-                                    style="color: #ee8686">本活动抽奖概率公示</a>。所用‘概率’均是在大样本(大量用户)下的统计数值，与单个玩家的少量测试数据之间可能会存在一定差异；
-                            </p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">9</em>
-                            <p>仅限掌上道聚城购买可额外获得1个钥匙，单Q限1；</p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">10</em>
-                            <p>本活动与苹果公司无关。</p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">11</em>
-                            <p>参与资格、获奖资格的取消。</p>
-                            <p class="sub">
-                                本活动不鼓励未满18周岁的未成年用户参与。若您为不具备完全民事行为能力的未成年人，您应在监护人的陪同下阅读本规则，并取得您监护人的同意。如您监护人同意您参与本活动，应对您参与本活动期间作出的行为进行正确监督和引导，同时，您行使和履行本活动规则下的权利和义务，均视为已获得您监护人认可。请理性消费。
-                                您若有下列任何一种行为或情况的，腾讯有权单方面取消您的参与资格、获奖资格等；</p>
-                            <p class="sub">a、不符合参与资格的；</p>
-                            <p class="sub">b、提供虚假信息的；</p>
-                            <p class="sub">c、虚假交易或恶意破坏活动的；</p>
-                            <p class="sub">d、以任何机器人软件、蜘蛛软件、爬虫软件、刷奖软件或其它任何自动方式、不正当手段等参与本活动的；</p>
-                            <p class="sub">e、有任何违反诚实信用、公序良俗、公平、公正等原则行为的；</p>
-                            <p class="sub">f、其他违反相关法规、本规则行为的。</p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">12</em>
-                            <p>纳税义务</p>
-                            <p class="sub">腾讯将依法履行个人所得税等相关税费代扣代缴的义务。</p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">13</em>
-                            <p>免责条款</p>
-                            <p class="sub">如因非腾讯原因导致您在本规则约定时间内未参与活动、兑换奖品或领取奖品，或由于您提供的信息不真实不完整等导致奖品无法发放或发放错误的，由您自行承担全部损失。
-                                互联网运行存在诸多不确定性因素，如因不可抗力、网络、通讯线路故障、计算机大规模瘫痪及活动中存在大面积作弊行为等原因致使本活动出现异常情况或难以继续开展的，腾讯有权采取包括但不限于通过各种方式消除异常情况或调整、暂停、取消本活动等合理措施保障腾讯及用户的合法权益，您表示理解，由此给您造成的损失，您同意不追究腾讯的责任。
-                            </p>
-                        </li>
-                        <li>
-                            <em class="spr item-ico">14</em>
-                            <p>管辖条款</p>
-                            <p class="sub">
-                                本规则的成立、生效、履行、解释及纠纷解决等相关事宜，均适用中华人民共和国大陆地区法律（不包括冲突法）。若您和腾讯之间发生任何纠纷或争议应将纠纷或争议提交本规则签订地即深圳市南山区有管辖权的人民法院管辖。
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+       
+         
         </div>
 
         <!--    section end-->
         <!--    dia start-->
         <!--代金券记录S-->
 
-        <!--右侧浮窗-->
-        <div class="right-nav">
-            <!--    <a class="btn-look" href="javascript:;" onclick="PTTSendClick('btn','btncheck','点击查看');" title="点击查看"></a>-->
-            <a class="btn-kf" href="https://kf.qq.com/faq/230209YN3UjQ2302092mIrMN.html"
-                onclick="PTTSendClick('btn','lxkf','联系客服')" title="联系客服"></a>
-        </div>
-
+   
         <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
       
         <script>
@@ -2403,7 +2318,11 @@
             //定义冠军道具中奖次数
             var jyz = 0;
             //定义经验值
+            var inst = new mdui.Dialog("#dialog", {
+  history:false
 
+});
+inst.open();
 
             SetGailv();
             var empsz = [0, 0];
@@ -2548,7 +2467,7 @@ function amsExchange(pid){
         $("#dhbtn"+pid).addClass("gray");
         let time = new Date()
                     ksz[0] =
-                    ksz[1] = "广东电信一区";
+                    ksz[1] = "模拟器大区一区";
                     ksz[2] = hzldh[sb][0];
                     zjjlt.push(ksz);
                     $("#zjjltb").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
@@ -2661,7 +2580,7 @@ for (let index = 0; index < levelnum; index++) {
             function SetjlZcx(pid) {
                 let time = new Date()
                 ksz[0] = time.toLocaleString();
-                ksz[1] = "广东电信一区";
+                ksz[1] = "模拟器大区一区";
                 ksz[2] = gailvArr[pid][0];
                 zjjlt.push(ksz);
                 $("#zjjltb").prepend("<tr><td>" + ksz[0] + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
@@ -2674,7 +2593,7 @@ for (let index = 0; index < levelnum; index++) {
 
                     zcxxz.push(ksz2);
 
-                    $("#zcxtb").prepend(" <tr id='zcxid" + zjcs + "'><td>" + ksz2[0] + "</td><td> <a  id='fckid" + zjcs + "'>[发送仓库]</a> </td><td> <a onclick='Fjkey(" + gailvArr[pid][2] + "," + zjcs + ")'  id='fjbtnid" + zjcs + "'>[分解]</a></td></tr>");
+                    $("#zcxtb").prepend(" <tr id='zcxid" + zjcs + "'><td>" + ksz2[0] + "</td><td> <a onclick='Fjkey(" + gailvArr[pid][2] + "," + zjcs + ")'  id='fjbtnid" + zjcs + "'>[分解]</a></td></tr>");
                     console.log(zcxxz)
                     zjcs++;
                 }
@@ -2691,7 +2610,7 @@ for (let index = 0; index < levelnum; index++) {
                 Showwd("#xttc")
                 zcxbcdk = true;
                 $("#zcxid" + zcxid).children().css("color", "grey")
-                $("#fckid" + zcxid).before("发送仓库")
+                // $("#fckid" + zcxid).before("发送仓库")
                 $("#fckid" + zcxid).remove();
                 $("#fjbtnid" + zcxid).before("已分解")
                 $("#fjbtnid" + zcxid).remove();
@@ -2737,7 +2656,7 @@ for (let index = 0; index < levelnum; index++) {
                     sjsz[djid-1][1]=false;
                     let time = new Date()
                     ksz[0] =
-                    ksz[1] = "广东电信一区";
+                    ksz[1] = "模拟器大区一区";
                     ksz[2] = sjsz[djid-1][0]+"徽章令";
                     zjjlt.push(ksz);
                     $("#zjjltb").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
@@ -2764,7 +2683,7 @@ for (let index = 0; index < levelnum; index++) {
  $(".bp_list1").eq(djid - 1).children("a").removeClass("on");
                     let time = new Date()
                     ksz[0] =
-                    ksz[1] = "广东电信一区";
+                    ksz[1] = "模拟器大区一区";
                     ksz[2] = ljqsz[djid-1][0];
                     zjjlt.push(ksz);
                     $("#zjjltb").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
@@ -2841,7 +2760,7 @@ $("#xtxx").text("一键领取完毕");
                 if (zjcs >= zjcsdhsz[pid][1] && zjcsdhsz[pid][2]) {
                     let time = new Date()
                     ksz[0] =
-                        ksz[1] = "广东电信一区";
+                        ksz[1] = "模拟器大区一区";
                     ksz[2] = zjcsdhsz[pid][0];
                     zjjlt.push(ksz);
                     $("#zjjltb").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
